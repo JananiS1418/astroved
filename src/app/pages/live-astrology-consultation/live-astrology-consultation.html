@@ -1,0 +1,258 @@
+<!-- Premium AstroVed Full-Width Responsive Navbar -->
+<div class="navbar-wrapper" [class.scrolled]="isScrolled()" id="navbarWrapper">
+  <header class="header">
+    <div class="nav-container">
+
+      <!-- LEFT: Brand Logo -->
+      <a href="/" class="logo-link">
+        <img src="https://cdn.astroved.com/images/images-av/AstroVed-Logo.svg" alt="AstroVed Logo" class="brand-logo" />
+      </a>
+
+      <!-- CENTER: Desktop Navigation -->
+      <nav class="desktop-nav">
+        <a href="#" class="nav-link" (click)="setActiveMenu('Special Events'); $event.preventDefault()" [class.active]="activeMenu() === 'Special Events'">
+          <span>Special Events</span>
+        </a>
+        <a href="#" class="nav-link" (click)="setActiveMenu('Sudarshana Jayanti'); $event.preventDefault()" [class.active]="activeMenu() === 'Sudarshana Jayanti'">
+          <span>Sudarshana Jayanti</span>
+        </a>
+        <a href="#" class="nav-link" (click)="setActiveMenu('Astrology Services'); $event.preventDefault()" [class.active]="activeMenu() === 'Astrology Services'">
+          <span>Astrology Services</span>
+          <svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="m6 9 6 6 6-6" />
+          </svg>
+        </a>
+        <a href="#" class="nav-link" (click)="setActiveMenu('Wealth Remedies'); $event.preventDefault()" [class.active]="activeMenu() === 'Wealth Remedies'">
+          <span>Wealth Remedies</span>
+          <svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="m6 9 6 6 6-6" />
+          </svg>
+        </a>
+        <a href="#" class="nav-link" (click)="setActiveMenu('Success Homas'); $event.preventDefault()" [class.active]="activeMenu() === 'Success Homas'">
+          <span>Success Homas</span>
+          <svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="m6 9 6 6 6-6" />
+          </svg>
+        </a>
+        <a href="#" class="nav-link" (click)="setActiveMenu('Store'); $event.preventDefault()" [class.active]="activeMenu() === 'Store'">
+          <span>Store</span>
+          <svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="m6 9 6 6 6-6" />
+          </svg>
+        </a>
+        <a href="#" class="nav-link" (click)="setActiveMenu('Free Astrology'); $event.preventDefault()" [class.active]="activeMenu() === 'Free Astrology'">
+          <span>Free Astrology</span>
+          <svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="m6 9 6 6 6-6" />
+          </svg>
+        </a>
+        <a href="#" class="nav-link" (click)="setActiveMenu('Resources'); $event.preventDefault()" [class.active]="activeMenu() === 'Resources'">
+          <span>Resources</span>
+          <svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="m6 9 6 6 6-6" />
+          </svg>
+        </a>
+      </nav>
+
+      <!-- RIGHT: Action Icons & Portal Access -->
+      <div class="header-actions">
+        <!-- Compact Search Trigger -->
+        <button class="action-btn search-trigger" (click)="toggleSearch()" aria-label="Open Search">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8" />
+            <path d="m21 21-4.3-4.3" />
+          </svg>
+        </button>
+
+        <!-- EN Lang Selector -->
+        <div class="lang-selector">
+          <button class="action-btn lang-btn">
+            <span>EN</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="m6 9 6 6 6-6" />
+            </svg>
+          </button>
+        </div>
+
+        <!-- Cart Icon with Badge -->
+        <a href="/cart" class="action-btn cart-btn" aria-label="View Cart">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z" />
+            <path d="M3 6h18" />
+            <path d="M16 10a4 4 0 0 1-8 0" />
+          </svg>
+          <span class="badge">3</span>
+        </a>
+
+        <!-- Account Button -->
+        <a href="/account" class="account-btn">Account</a>
+
+        <!-- Mobile Hamburger -->
+        <button class="mobile-hamburger" (click)="toggleMobileMenu()" [class.open]="isMobileMenuOpen()" aria-label="Toggle menu">
+          <span class="hamburger-line line-1"></span>
+          <span class="hamburger-line line-2"></span>
+          <span class="hamburger-line line-3"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- CENTERED SEARCH OVERLAY (inside island header) -->
+    <div class="search-overlay" [class.open]="isSearchOpen()">
+      <div class="search-input-wrapper">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8" />
+          <path d="m21 21-4.3-4.3" />
+        </svg>
+        <input type="text" placeholder="Search events..." class="search-input" />
+        <button class="close-search-btn" (click)="toggleSearch()">
+          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 6 6 18M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+</div>
+
+<!-- MOBILE NAVIGATION DRAWER -->
+<div class="mobile-drawer" [class.open]="isMobileMenuOpen()">
+  <div class="mobile-drawer-inner">
+    <nav class="mobile-nav-links">
+      <a href="#" class="mobile-nav-link" (click)="toggleMobileMenu()">Special Events</a>
+      <a href="#" class="mobile-nav-link" (click)="toggleMobileMenu()">Sudarshana Jayanti</a>
+      <a href="#" class="mobile-nav-link" (click)="toggleMobileMenu()">Astrology Services</a>
+      <a href="#" class="mobile-nav-link" (click)="toggleMobileMenu()">Wealth Remedies</a>
+      <a href="#" class="mobile-nav-link" (click)="toggleMobileMenu()">Success Homas</a>
+      <a href="#" class="mobile-nav-link" (click)="toggleMobileMenu()">Store</a>
+      <a href="#" class="mobile-nav-link" (click)="toggleMobileMenu()">Free Astrology</a>
+      <a href="#" class="mobile-nav-link" (click)="toggleMobileMenu()">Resources</a>
+    </nav>
+  </div>
+</div>
+
+<!-- ============================================================
+     PREMIUM BANNER SECTION (Hero with Background Video & Centered Copy)
+     ============================================================ -->
+<section class="banner-section">
+  <!-- Looping Background Video -->
+  <div class="video-bg-container">
+    <video autoplay loop muted playsinline class="video-bg">
+      <source src="https://assets.mixkit.co/videos/preview/mixkit-stars-in-space-background-1611-large.mp4" type="video/mp4">
+    </video>
+    <div class="video-overlay"></div>
+  </div>
+
+  <!-- Hero Content -->
+  <div class="banner-container">
+    <div class="banner-grid">
+      
+      <div class="banner-text-content">
+        <!-- Heading Copy from Second Image -->
+        <h1 class="banner-title">
+          Live Astrology Consultation
+        </h1>
+        
+        <!-- Subheading Copy from Second Image -->
+        <p class="banner-subtitle">
+          LIVE Skype or Phone Consultation with an Expert Astrologer
+        </p>
+
+        <!-- Centered Category Badges (First Image Content) -->
+        <div class="categories-grid">
+          <div class="category-card">
+            <div class="icon-wrap love">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+            </div>
+            <span>Love & Marriage</span>
+          </div>
+
+          <div class="category-card">
+            <div class="icon-wrap career">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+            </div>
+            <span>Career</span>
+          </div>
+
+          <div class="category-card">
+            <div class="icon-wrap money">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" x2="12" y1="2" y2="22"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            </div>
+            <span>Money</span>
+          </div>
+
+          <div class="category-card">
+            <div class="icon-wrap health">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+            </div>
+            <span>Health</span>
+          </div>
+
+          <div class="category-card">
+            <div class="icon-wrap business">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>
+            </div>
+            <span>Business</span>
+          </div>
+
+          <div class="category-card">
+            <div class="icon-wrap children">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22a8 8 0 1 0 0-16 8 8 0 0 0 0 16Z"/><path d="M12 6V2"/><path d="M8 2h8"/></svg>
+            </div>
+            <span>Children</span>
+          </div>
+        </div>
+
+        <!-- Centered Main Orange Button (Copy & style from second image) -->
+        <div class="cta-buttons">
+          <a href="#" class="btn-primary cta-btn">
+            <span>BOOK NOW</span>
+          </a>
+        </div>
+
+        <!-- Centered Helper Description text (from Second Image) -->
+        <p class="helper-desc-text">
+          Speak with our astrologer to receive insights & solve your life problems
+        </p>
+
+        <!-- Trust Badges (First Image Content) -->
+        <div class="trust-indicators">
+          <div class="trust-item">
+            <svg class="check-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+            <span>20+ Years of Trust</span>
+          </div>
+          <div class="trust-item">
+            <svg class="check-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+            <span>100% Confidential</span>
+          </div>
+          <div class="trust-item">
+            <svg class="check-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+            <span>Verified Astrologers</span>
+          </div>
+        </div>
+
+        <!-- Rating & Social Proof (First Image Content) -->
+        <div class="social-proof">
+          <div class="avatar-group">
+            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=100" alt="Customer Avatar" class="avatar-img" />
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=100" alt="Customer Avatar" class="avatar-img" />
+            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=100" alt="Customer Avatar" class="avatar-img" />
+          </div>
+          <div class="proof-details">
+            <div class="stars-row">
+              <span class="happy-count">50,000+ Happy Customers</span>
+              <div class="stars">
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              </div>
+              <span class="rating-val">4.8 Google Rating</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
