@@ -326,47 +326,37 @@
 /*================================================*/
 
 @media(max-width:1024px) {
-
     .trust-banner-container {
-
         flex-wrap: wrap;
-
         justify-content: center;
-
         gap: 15px;
-
-        padding: 18px;
-
+        padding: 1.5rem;
+        border-radius: 16px;
     }
 
     .trust-banner-divider {
-
         display: none;
-
     }
 
     .trust-banner-item {
-
-        width: 48%;
-
+        width: calc(50% - 10px);
     }
-
 }
 
 @media(max-width:768px) {
-
     .trust-banner-item {
-
         width: 100%;
+        padding: 10px;
+    }
 
+    .trust-banner-container {
+        padding: 1.2rem;
+        border-radius: 16px;
+        gap: 10px;
     }
 
     .trust-banner-section {
-
         margin-top: -2rem;
-
         padding: 0 1rem;
-
     }
-
 }
