@@ -161,6 +161,7 @@
     padding: 0.5rem 0;
     max-height: 320px; /* Forces scroll after roughly 7 items */
     overflow-y: auto;
+    overscroll-behavior-y: contain;
     opacity: 0;
     visibility: hidden;
     transform: translateY(10px);
