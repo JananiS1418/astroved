@@ -28,10 +28,7 @@
 
     border-radius: 22px;
 
-    background:
-        linear-gradient(135deg,
-            rgba(245, 235, 255, .98),
-            rgba(255, 240, 248, .98));
+    background: #ffffff;
 
     backdrop-filter: blur(20px);
 
@@ -163,36 +160,19 @@
 }
 
 .trust-banner-item:hover {
-
-    background: linear-gradient(135deg,
-            #7240ff,
-            #8f63ff);
-
-    transform:
-        translateY(-8px) scale(1.04);
-
-    box-shadow:
-        0 20px 35px rgba(114, 64, 255, .30);
-
+    transform: translateY(-8px) scale(1.04);
 }
 
+.trust-banner-item:hover .trust-banner-title {
+    color: #7240ff;
+}
 
-.trust-banner-item:hover .trust-banner-title,
 .trust-banner-item:hover .trust-banner-desc {
-
-    color: #fff;
-
+    color: #7240ff;
 }
-
 
 .trust-banner-item:hover .trust-banner-icon {
-
     transform: scale(1.15) rotate(8deg);
-
-    background: rgba(255, 255, 255, .18);
-
-    color: #fff;
-
 }
 
 
