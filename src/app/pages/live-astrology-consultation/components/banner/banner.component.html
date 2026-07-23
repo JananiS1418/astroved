@@ -55,7 +55,7 @@
           BOOK CONSULTATION
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6" /></svg>
         </a>
-        <a href="#" class="btn-outline steps-btn">
+        <a href="#" (click)="toggleSteps($event)" class="btn-outline steps-btn">
           <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg>
           HOW IT WORKS
         </a>
@@ -81,4 +81,97 @@
     </div>
 
   </div>
+
+  <!-- Booking Steps Dropdown -->
+  <div class="booking-steps-wrapper" [class.show]="showSteps">
+    <div class="booking-steps-container">
+      <h2 class="steps-heading" (click)="toggleSteps($event)">
+        STEPS TO BOOK A CONSULTATION 
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" [class.rotated]="showSteps"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      </h2>
+      
+      <div class="steps-box">
+        <button class="close-steps-btn" (click)="toggleSteps($event)">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+
+        <div class="steps-grid">
+          <!-- Step 1 -->
+          <div class="step-card">
+            <div class="step-number">1</div>
+            <h3 class="step-title">Select a language</h3>
+            <div class="step-mockup">
+              <div class="mockup-dropdown">
+                <div class="selected">English <span>▼</span></div>
+                <ul class="dropdown-list">
+                  <li class="active">English</li>
+                  <li>Tamil</li>
+                  <li>Telugu</li>
+                  <li>Hindi</li>
+                  <li>French</li>
+                  <li>Italian</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="step-card center-card">
+            <div class="step-number">2</div>
+            <h3 class="step-title">Select Astrologer, Date & Time</h3>
+            <div class="step-mockup">
+              <div class="mockup-profile">
+                 <div class="prof-header">
+                   <div class="prof-img"></div>
+                   <div class="prof-info">
+                     <h4>XXXX YYYY</h4>
+                     <p>Languages Known: Tamil, English</p>
+                     <p>Skills: Vedic Astrology, KP Astrology</p>
+                     <p>Experience: 12 years</p>
+                   </div>
+                   <div class="prof-action">
+                     <button class="book-btn">Book Appointment</button>
+                     <a href="#" class="profile-link">Profile</a>
+                   </div>
+                 </div>
+                 <div class="prof-timeline">
+                    <div class="timeline-tabs">
+                      <span class="active-tab">Tue, Jan 23</span>
+                      <span>Wed, Jan 24</span>
+                    </div>
+                    <div class="timeline-slots">
+                      <span class="slot-time">9:30 PM</span>
+                      <span class="slot-time">10:00 PM</span>
+                      <span class="slot-time">10:50 PM</span>
+                      <span class="slot-time active">11:00 PM</span>
+                    </div>
+                 </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="step-card right-card">
+            <div class="step-number">3</div>
+            <h3 class="step-title">Confirm and Proceed to checkout</h3>
+            <div class="step-mockup mockup-checkout-wrapper">
+              <div class="mockup-checkout">
+                 <p class="checkout-name">Vijayalakshmi K</p>
+                 <div class="time-options">
+                    <label><input type="radio" checked> 30 Minutes</label>
+                    <label><input type="radio"> 60 Minutes</label>
+                 </div>
+                 <p class="price">USD 59.00</p>
+                 <div class="checkout-btns">
+                   <button class="confirm-btn">Confirm</button>
+                   <button class="cancel-btn">Cancel</button>
+                 </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </section>

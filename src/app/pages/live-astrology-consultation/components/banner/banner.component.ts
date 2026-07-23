@@ -8,4 +8,11 @@ import { CommonModule } from '@angular/common';
   templateUrl: './banner.component.html',
   styleUrl: './banner.component.css'
 })
-export class BannerComponent {}
+export class BannerComponent {
+  showSteps = false;
+
+  toggleSteps(event: Event) {
+    event.preventDefault();
+    this.showSteps = !this.showSteps;
+  }
+}
