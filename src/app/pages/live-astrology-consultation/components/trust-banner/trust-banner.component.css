@@ -1,11 +1,11 @@
-/* ============================================================
-   1. TRUST BANNER SECTION (Floating under main hero)
-   ============================================================ */
+/* ==========================================================
+   PREMIUM TRUST BANNER
+========================================================== */
+
 .trust-banner-section {
     position: relative;
-    z-index: 10;
-    margin-top: -3.5rem;
-    /* pull up over the banner */
+    z-index: 20;
+    margin-top: -3.2rem;
     margin-bottom: 3rem;
     padding: 0 2rem;
     display: flex;
@@ -13,137 +13,380 @@
 }
 
 .trust-banner-container {
-    background: #ffffff;
-    border-radius: 16px;
-    padding: 1.25rem 2.5rem;
+
+    position: relative;
+    overflow: hidden;
+
+    width: 100%;
+    max-width: 1120px;
+
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 100%;
-    max-width: 1100px;
-    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.08), 0 4px 12px rgba(0, 0, 0, 0.04);
-    border: 1px solid rgba(0, 0, 0, 0.03);
+
+    padding: 1rem 2rem;
+
+    border-radius: 22px;
+
+    background:
+        linear-gradient(135deg,
+            rgba(245, 235, 255, .98),
+            rgba(255, 240, 248, .98));
+
+    backdrop-filter: blur(20px);
+
+    border: 1px solid rgba(255, 255, 255, .8);
+
+    box-shadow:
+        0 20px 60px rgba(114, 64, 255, .15),
+        inset 0 2px 10px rgba(255, 255, 255, 0.9);
+
+    animation:
+        floatingCard 6s ease-in-out infinite;
 }
 
+
+/* Animated Gradient */
+
+.trust-banner-container::before {
+
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background: linear-gradient(120deg,
+            rgba(114, 64, 255, .10),
+            rgba(255, 120, 40, .08),
+            rgba(65, 180, 255, .08),
+            rgba(114, 64, 255, .10));
+
+    background-size: 300% 300%;
+
+    animation: gradientMove 12s linear infinite;
+
+    z-index: -2;
+
+}
+
+
+/* Glow Border */
+
+.trust-banner-container::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    padding: 1px;
+
+    border-radius: 22px;
+
+    background: linear-gradient(90deg,
+            #7240ff,
+            #9f7bff,
+            #ff944d,
+            #42a5f5,
+            #7240ff);
+
+    background-size: 300%;
+
+    animation: borderFlow 8s linear infinite;
+
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+
+    -webkit-mask-composite: xor;
+
+    mask-composite: exclude;
+
+}
+
+
+
+/*================================================*/
+
 .trust-banner-item {
+
+    position: relative;
+
     display: flex;
+
     align-items: center;
-    gap: 1.15rem;
-    padding: 0.75rem 1rem;
-    border-radius: 12px;
-    transition: all 0.3s ease;
-    cursor: default;
-    background: transparent;
+
+    gap: 14px;
+
+    padding: 12px 16px;
+
+    border-radius: 16px;
+
+    transition: .45s;
+
+    cursor: pointer;
+
+    overflow: hidden;
+
+}
+
+
+.trust-banner-item::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: -100%;
+
+    top: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+    background: linear-gradient(90deg,
+            transparent,
+            rgba(255, 255, 255, .45),
+            transparent);
+
+    transition: .6s;
+
+}
+
+
+.trust-banner-item:hover::before {
+
+    left: 120%;
+
 }
 
 .trust-banner-item:hover {
-    transform: translateY(-5px) scale(1.02);
-    background: #7240ff; /* Strong purple background on hover */
-    box-shadow: 0 12px 30px rgba(114, 64, 255, 0.4);
+
+    background: linear-gradient(135deg,
+            #7240ff,
+            #8f63ff);
+
+    transform:
+        translateY(-8px) scale(1.04);
+
+    box-shadow:
+        0 20px 35px rgba(114, 64, 255, .30);
+
 }
+
 
 .trust-banner-item:hover .trust-banner-title,
 .trust-banner-item:hover .trust-banner-desc {
-    color: #ffffff;
+
+    color: #fff;
+
 }
+
 
 .trust-banner-item:hover .trust-banner-icon {
-    background: rgba(255, 255, 255, 0.2);
-    color: #ffffff;
-    animation: icon-wobble-pulse 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) infinite alternate;
+
+    transform: scale(1.15) rotate(8deg);
+
+    background: rgba(255, 255, 255, .18);
+
+    color: #fff;
+
 }
 
-@keyframes icon-wobble-pulse {
-    0% { transform: scale(1) rotate(0deg); }
-    100% { transform: scale(1.25) rotate(10deg); }
-}
+
+/*================================================*/
 
 .trust-banner-icon {
+
+    width: 50px;
+
+    height: 50px;
+
     display: flex;
+
     align-items: center;
+
     justify-content: center;
-    width: 52px;
-    height: 52px;
+
     border-radius: 50%;
+
+    transition: .45s;
+
     flex-shrink: 0;
+
 }
 
+
 .icon-shield {
-    background: #f3f0ff;
+
+    background: #f2ecff;
+
     color: #7240ff;
+
 }
 
 .icon-user {
-    background: #fff4e5;
+
+    background: #fff5e8;
+
     color: #ff9800;
+
 }
 
 .icon-clock {
-    background: #ebfbee;
+
+    background: #ecfff1;
+
     color: #4caf50;
+
 }
 
 .icon-users {
-    background: #e8f0fe;
+
+    background: #edf4ff;
+
     color: #4285f4;
+
 }
 
-.trust-banner-text {
-    display: flex;
-    flex-direction: column;
-    gap: 0.2rem;
-}
+/*================================================*/
 
 .trust-banner-title {
-    font-size: 0.95rem;
-    font-weight: 700;
-    color: #1a1a1a;
+
     margin: 0;
+
+    font-size: .95rem;
+
+    font-weight: 700;
+
+    color: #232323;
+
 }
 
 .trust-banner-desc {
-    font-size: 0.8rem;
+
+    margin-top: 3px;
+
+    font-size: .78rem;
+
+    color: #7d7d7d;
+
     font-weight: 500;
-    color: #888;
-    margin: 0;
+
 }
+
+/*================================================*/
 
 .trust-banner-divider {
+
     width: 1px;
-    height: 45px;
-    background: rgba(0, 0, 0, 0.06);
+
+    height: 40px;
+
+    background: linear-gradient(transparent,
+            rgba(114, 64, 255, .25),
+            transparent);
+
 }
 
-@media (max-width: 1024px) {
+/*================================================*/
+
+@keyframes gradientMove {
+
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+
+}
+
+@keyframes borderFlow {
+
+    0% {
+        background-position: 0%;
+    }
+
+    100% {
+        background-position: 300%;
+    }
+
+}
+
+@keyframes floatingCard {
+
+    0% {
+
+        transform: translateY(0px);
+
+    }
+
+    50% {
+
+        transform: translateY(-6px);
+
+    }
+
+    100% {
+
+        transform: translateY(0px);
+
+    }
+
+}
+
+/*================================================*/
+
+@media(max-width:1024px) {
+
     .trust-banner-container {
+
         flex-wrap: wrap;
-        gap: 1.5rem;
-        justify-content: space-around;
-        padding: 1.5rem;
+
+        justify-content: center;
+
+        gap: 15px;
+
+        padding: 18px;
+
     }
 
     .trust-banner-divider {
+
         display: none;
+
     }
 
     .trust-banner-item {
-        width: 45%;
+
+        width: 48%;
+
     }
+
 }
 
-@media (max-width: 600px) {
-    .trust-banner-item {
-        width: 100%;
-        justify-content: flex-start;
-    }
+@media(max-width:768px) {
 
-    .trust-banner-container {
-        margin-top: -1.5rem;
-        border-radius: 12px;
+    .trust-banner-item {
+
+        width: 100%;
+
     }
 
     .trust-banner-section {
+
         margin-top: -2rem;
+
         padding: 0 1rem;
+
     }
+
 }
