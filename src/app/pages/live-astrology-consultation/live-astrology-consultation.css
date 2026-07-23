@@ -39,12 +39,12 @@
 .header {
     width: 100%;
     margin: 0 auto;
-    padding: 0.9rem 0;
+    padding: 1.25rem 0;
     transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .navbar-wrapper.scrolled .header {
-    padding: 0.65rem 0;
+    padding: 0.85rem 0;
 }
 
 .nav-container {
@@ -68,7 +68,7 @@
 }
 
 .brand-logo {
-    height: 2.15rem;
+    height: 2.5rem;
     width: auto;
     display: block;
 }
@@ -489,10 +489,10 @@
 /* Floating Rounded Banner Style */
 .banner-section.rounded-banner {
     width: calc(100% - 4rem);
-    margin: 4.5rem auto 3rem auto;
+    margin: 7.5rem auto 3rem auto;
     border-radius: 40px;
     padding-top: 3rem;
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+    box-shadow: none;
 }
 
 /* HTML5 Video Background */
@@ -937,7 +937,7 @@
 
     .banner-section.rounded-banner {
         width: calc(100% - 2rem);
-        margin: 4.5rem auto 2rem auto;
+        margin: 6.5rem auto 2rem auto;
         border-radius: 24px;
         padding-top: 2rem;
         height: auto;
@@ -980,7 +980,7 @@
 
     .banner-section.rounded-banner {
         width: calc(100% - 1rem);
-        margin: 3.5rem auto 1.5rem auto;
+        margin: 5.5rem auto 1.5rem auto;
         border-radius: 20px;
         height: auto;
         min-height: auto;
@@ -1054,71 +1054,126 @@
 }
 
 /* ============================================================
-   1. TRUST & CREDIBILITY SECTION
+   1. TRUST BANNER SECTION (Floating under main hero)
    ============================================================ */
-.trust-section {
-    padding: 3rem 2rem;
-    background: linear-gradient(180deg, #fff, var(--background-light));
-    margin-top: -2rem;
-    /* Pull up slightly over the banner */
+.trust-banner-section {
     position: relative;
-    z-index: 5;
+    z-index: 10;
+    margin-top: -3.5rem; /* pull up over the banner */
+    margin-bottom: 3rem;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: center;
 }
 
-.trust-container {
-    max-width: 1240px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 1.5rem;
-}
-
-.trust-card {
-    background: #fff;
+.trust-banner-container {
+    background: #ffffff;
     border-radius: 16px;
-    padding: 2rem 1.5rem;
-    text-align: center;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
-    border: 1px solid rgba(var(--primary-color-rgb), 0.05);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 1.25rem 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1100px;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.08), 0 4px 12px rgba(0, 0, 0, 0.04);
+    border: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+.trust-banner-item {
+    display: flex;
+    align-items: center;
+    gap: 1.15rem;
+    padding: 0 0.5rem;
+}
+
+.trust-banner-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.icon-shield {
+    background: #f3f0ff;
+    color: #7240ff;
+}
+
+.icon-user {
+    background: #fff4e5;
+    color: #ff9800;
+}
+
+.icon-clock {
+    background: #ebfbee;
+    color: #4caf50;
+}
+
+.icon-users {
+    background: #e8f0fe;
+    color: #4285f4;
+}
+
+.trust-banner-text {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    gap: 0.2rem;
 }
 
-.trust-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 35px rgba(var(--primary-color-rgb), 0.1);
-}
-
-.trust-icon {
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, rgba(var(--primary-color-rgb), 0.1), rgba(var(--accent-color-rgb), 0.1));
-    color: var(--primary-color);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 1rem;
-}
-
-.trust-number {
-    font-size: 2rem;
-    font-weight: 800;
-    color: var(--primary-color);
-    margin: 0 0 0.5rem 0;
-    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.trust-desc {
+.trust-banner-title {
     font-size: 0.95rem;
-    color: var(--text-muted);
-    font-weight: 500;
+    font-weight: 700;
+    color: #1a1a1a;
     margin: 0;
+}
+
+.trust-banner-desc {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: #888;
+    margin: 0;
+}
+
+.trust-banner-divider {
+    width: 1px;
+    height: 45px;
+    background: rgba(0, 0, 0, 0.06);
+}
+
+@media (max-width: 1024px) {
+    .trust-banner-container {
+        flex-wrap: wrap;
+        gap: 1.5rem;
+        justify-content: space-around;
+        padding: 1.5rem;
+    }
+    
+    .trust-banner-divider {
+        display: none;
+    }
+    
+    .trust-banner-item {
+        width: 45%;
+    }
+}
+
+@media (max-width: 600px) {
+    .trust-banner-item {
+        width: 100%;
+        justify-content: flex-start;
+    }
+    
+    .trust-banner-container {
+        margin-top: -1.5rem;
+        border-radius: 12px;
+    }
+    
+    .trust-banner-section {
+        margin-top: -2rem;
+        padding: 0 1rem;
+    }
 }
 
 /* ============================================================
