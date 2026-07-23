@@ -41,7 +41,7 @@
     align-items: center;
     gap: 1rem;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
-    border: 1px solid rgba(114, 64, 255, 0.08);
+    border: 1px solid rgba(104, 104, 249, 0.08);
     transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     cursor: pointer;
     overflow: hidden;
@@ -63,8 +63,8 @@
 }
 
 .help-card:hover {
-    border-color: rgba(114, 64, 255, 0.3);
-    box-shadow: 0 10px 25px rgba(114, 64, 255, 0.1);
+    border-color: rgba(104, 104, 249, 0.3);
+    box-shadow: 0 10px 25px rgba(104, 104, 249, 0.1);
     transform: translateY(-4px);
 }
 
@@ -76,7 +76,7 @@
     align-items: center;
     justify-content: center;
     background: linear-gradient(135deg, #f7f2fe, #fff4e5);
-    color: var(--primary-color, #7240FF);
+    color: var(--primary-color, #6868f9);
     border-radius: 10px;
     transition: all 0.3s ease;
     z-index: 1;

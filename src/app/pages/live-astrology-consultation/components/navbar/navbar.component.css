@@ -34,7 +34,7 @@
 .navbar-wrapper.scrolled {
     background: rgba(255, 255, 255, 0.95);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
-    border-bottom-color: rgba(114, 64, 255, 0.08);
+    border-bottom-color: rgba(104, 104, 249, 0.08);
 }
 
 .header {
@@ -115,18 +115,18 @@
 /* Elevate the hovered item */
 .desktop-nav > *:hover > .nav-link,
 .desktop-nav > a.nav-link:hover {
-    color: #7240FF;
-    background: rgba(114, 64, 255, 0.06);
+    color: #6868f9;
+    background: rgba(104, 104, 249, 0.06);
     transform: scale(1.05);
 }
 
 .nav-link.active {
-    color: #7240FF;
-    background: rgba(114, 64, 255, 0.04);
+    color: #6868f9;
+    background: rgba(104, 104, 249, 0.04);
 }
 
 .nav-icon {
-    color: #7240FF;
+    color: #6868f9;
     margin-right: 6px;
     flex-shrink: 0;
 }
@@ -253,8 +253,8 @@
 }
 
 .action-btn:hover {
-    color: #7240FF;
-    background: rgba(114, 64, 255, 0.05);
+    color: #6868f9;
+    background: rgba(104, 104, 249, 0.05);
     transform: scale(1.05);
 }
 
@@ -288,7 +288,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #7240FF;
+    background: #6868f9;
     color: #ffffff;
     text-decoration: none;
     font-size: 0.88rem;
@@ -296,15 +296,15 @@
     padding: 0.55rem 1.15rem;
     border-radius: 14px;
     transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-    box-shadow: 0 4px 12px rgba(114, 64, 255, 0.15);
+    box-shadow: 0 4px 12px rgba(104, 104, 249, 0.15);
     border: none;
     cursor: pointer;
 }
 
 .account-btn:hover {
-    background: #6230EE;
+    background: #5252e6;
     transform: translateY(-1px);
-    box-shadow: 0 6px 16px rgba(114, 64, 255, 0.25);
+    box-shadow: 0 6px 16px rgba(104, 104, 249, 0.25);
 }
 
 /* ----- FLOATING SEARCH BAR ----- */
@@ -343,14 +343,14 @@
     background: #ffffff;
     padding: 0.6rem 1.25rem;
     border-radius: 50px;
-    border: 2px solid rgba(114, 64, 255, 0.3);
+    border: 2px solid rgba(104, 104, 249, 0.3);
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
     transition: all 0.3s ease;
 }
 
 .search-input-wrapper:focus-within {
-    border-color: #7240FF;
-    box-shadow: 0 4px 20px rgba(114, 64, 255, 0.15);
+    border-color: #6868f9;
+    box-shadow: 0 4px 20px rgba(104, 104, 249, 0.15);
 }
 
 .search-input {
@@ -466,7 +466,7 @@
 }
 
 .mobile-nav-link:hover {
-    color: #7240FF;
+    color: #6868f9;
 }
 
 /* ----- RESPONSIVE MEDIA QUERIES ----- */

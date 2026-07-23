@@ -40,7 +40,7 @@
     padding: 1rem 0.5rem;
     border-radius: 16px;
     background: #ffffff;
-    border: 1px solid rgba(114, 64, 255, 0.08);
+    border: 1px solid rgba(104, 104, 249, 0.08);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
     text-align: center;
     transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
@@ -69,8 +69,8 @@
 }
 
 .feature-card:hover {
-    border-color: rgba(114, 64, 255, 0.3);
-    box-shadow: 0 12px 24px rgba(114, 64, 255, 0.1), 0 0 12px rgba(255,123,0,0.05);
+    border-color: rgba(104, 104, 249, 0.3);
+    box-shadow: 0 12px 24px rgba(104, 104, 249, 0.1), 0 0 12px rgba(255,123,0,0.05);
     transform: translateY(-6px) scale(1.02);
 }
 
@@ -80,12 +80,12 @@
     flex-shrink: 0;
     border-radius: 12px;
     background: linear-gradient(135deg, #f7f2fe, #fff4e5);
-    color: var(--primary-color, #7240FF);
+    color: var(--primary-color, #6868f9);
     display: flex;
     align-items: center;
     justify-content: center;
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    box-shadow: 0 4px 10px rgba(114, 64, 255, 0.1);
+    box-shadow: 0 4px 10px rgba(104, 104, 249, 0.1);
 }
 
 .feature-icon-wrapper svg {
@@ -94,10 +94,10 @@
 }
 
 .feature-card:hover .feature-icon-wrapper {
-    background: linear-gradient(135deg, var(--primary-color, #7240FF), var(--accent-color, #FF7B00));
+    background: linear-gradient(135deg, var(--primary-color, #6868f9), var(--accent-color, #FF7B00));
     color: #fff;
     transform: scale(1.1) rotate(5deg);
-    box-shadow: 0 8px 16px rgba(114, 64, 255, 0.25);
+    box-shadow: 0 8px 16px rgba(104, 104, 249, 0.25);
 }
 
 .feature-title {
@@ -110,7 +110,7 @@
 }
 
 .feature-card:hover .feature-title {
-    color: var(--primary-color, #7240FF);
+    color: var(--primary-color, #6868f9);
 }
 
 @media (max-width: 1200px) {
