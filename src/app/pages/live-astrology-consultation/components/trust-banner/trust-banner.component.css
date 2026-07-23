@@ -29,7 +29,33 @@
     display: flex;
     align-items: center;
     gap: 1.15rem;
-    padding: 0 0.5rem;
+    padding: 0.75rem 1rem;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    cursor: default;
+    background: transparent;
+}
+
+.trust-banner-item:hover {
+    transform: translateY(-5px) scale(1.02);
+    background: #7240ff; /* Strong purple background on hover */
+    box-shadow: 0 12px 30px rgba(114, 64, 255, 0.4);
+}
+
+.trust-banner-item:hover .trust-banner-title,
+.trust-banner-item:hover .trust-banner-desc {
+    color: #ffffff;
+}
+
+.trust-banner-item:hover .trust-banner-icon {
+    background: rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+    animation: icon-wobble-pulse 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) infinite alternate;
+}
+
+@keyframes icon-wobble-pulse {
+    0% { transform: scale(1) rotate(0deg); }
+    100% { transform: scale(1.25) rotate(10deg); }
 }
 
 .trust-banner-icon {

@@ -4,7 +4,6 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { BannerComponent } from './components/banner/banner.component';
 import { TrustBannerComponent } from './components/trust-banner/trust-banner.component';
 import { WhyChooseComponent } from './components/why-choose/why-choose.component';
-import { CategoriesComponent } from './components/categories/categories.component';
 import { QuestionsComponent } from './components/questions/questions.component';
 import { HowItWorksComponent } from './components/how-it-works/how-it-works.component';
 import { BookingInfoComponent } from './components/booking-info/booking-info.component';
@@ -23,7 +22,6 @@ import { FooterComponent } from './components/footer/footer.component';
     BannerComponent,
     TrustBannerComponent,
     WhyChooseComponent,
-    CategoriesComponent,
     QuestionsComponent,
     HowItWorksComponent,
     BookingInfoComponent,
