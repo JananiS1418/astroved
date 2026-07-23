@@ -28,6 +28,7 @@
     border-bottom: 1px solid rgba(0, 0, 0, 0.05);
     padding: 0 2rem;
     transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
 }
 
 .navbar-wrapper.scrolled {
@@ -80,6 +81,9 @@
     gap: 0.4rem;
     margin: 0 auto;
 }
+.desktop-nav > * {
+    transition: opacity 0.35s ease, filter 0.35s ease, transform 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
 
 .nav-link {
     display: flex;
@@ -92,39 +96,33 @@
     padding: 0.5rem 0.8rem;
     border-radius: 10px;
     position: relative;
-    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     white-space: nowrap;
+    background: transparent;
 }
 
-.nav-link::after {
-    content: '';
-    position: absolute;
-    bottom: -2px;
-    left: 50%;
-    width: 0;
-    height: 3px;
-    background: #7240FF;
-    border-radius: 4px;
-    transform: translateX(-50%);
-    transition: width 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+.nav-link span {
+    transition: color 0.3s ease;
 }
 
-.nav-link:hover {
+/* FOCUS MODE: Dim and blur all siblings when one is hovered */
+.desktop-nav:has(> *:hover) > *:not(:hover) {
+    opacity: 0.4;
+    filter: blur(1.5px);
+    transform: scale(0.96);
+}
+
+/* Elevate the hovered item */
+.desktop-nav > *:hover > .nav-link,
+.desktop-nav > a.nav-link:hover {
     color: #7240FF;
-    background: rgba(114, 64, 255, 0.04);
-}
-
-.nav-link:hover::after {
-    width: 16px;
+    background: rgba(114, 64, 255, 0.06);
+    transform: scale(1.05);
 }
 
 .nav-link.active {
     color: #7240FF;
-    background: rgba(114, 64, 255, 0.06);
-}
-
-.nav-link.active::after {
-    width: 16px;
+    background: rgba(114, 64, 255, 0.04);
 }
 
 .nav-icon {
@@ -478,32 +476,40 @@
         padding: 0.4rem 0.5rem;
         font-size: 0.88rem;
     }
+
     .chevron-icon {
         width: 7px;
         height: 7px;
         margin-left: 2px;
     }
+
     .desktop-nav {
         gap: 0.3rem;
     }
+
     .brand-logo {
         height: 2.2rem;
     }
+
     .action-btn {
         width: 34px;
         height: 34px;
     }
+
     .action-btn svg {
         width: 18px;
         height: 18px;
     }
+
     .account-btn {
         padding: 0.4rem 0.8rem;
         font-size: 0.85rem;
     }
+
     .header-actions {
         gap: 0.4rem;
     }
+
     .navbar-wrapper {
         padding: 0 1.25rem;
     }
@@ -515,19 +521,24 @@
         padding: 0.3rem 0.35rem;
         font-size: 0.82rem;
     }
+
     .desktop-nav {
         gap: 0.15rem;
     }
+
     .brand-logo {
         height: 2rem;
     }
+
     .account-btn {
         padding: 0.35rem 0.7rem;
         font-size: 0.8rem;
     }
+
     .navbar-wrapper {
         padding: 0 0.5rem;
     }
+
     .lang-btn span {
         font-size: 0.75rem;
     }
@@ -539,7 +550,7 @@
     .desktop-nav {
         display: none;
     }
-    
+
     .mobile-hamburger {
         display: flex;
     }
@@ -549,7 +560,8 @@
     }
 
     .account-btn {
-        display: none; /* Can be moved inside mobile menu */
+        display: none;
+        /* Can be moved inside mobile menu */
     }
 
     .lang-btn {
