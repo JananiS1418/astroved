@@ -4,7 +4,8 @@
 .trust-banner-section {
     position: relative;
     z-index: 10;
-    margin-top: -3.5rem; /* pull up over the banner */
+    margin-top: -4.5rem;
+    /* pull up over the banner */
     margin-bottom: 3rem;
     padding: 0 2rem;
     display: flex;
@@ -94,11 +95,11 @@
         justify-content: space-around;
         padding: 1.5rem;
     }
-    
+
     .trust-banner-divider {
         display: none;
     }
-    
+
     .trust-banner-item {
         width: 45%;
     }
@@ -109,12 +110,12 @@
         width: 100%;
         justify-content: flex-start;
     }
-    
+
     .trust-banner-container {
         margin-top: -1.5rem;
         border-radius: 12px;
     }
-    
+
     .trust-banner-section {
         margin-top: -2rem;
         padding: 0 1rem;

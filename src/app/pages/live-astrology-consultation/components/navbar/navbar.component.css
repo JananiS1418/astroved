@@ -472,16 +472,67 @@
 
 /* ----- RESPONSIVE MEDIA QUERIES ----- */
 
-/* LAPTOP / LARGE TABLET (up to 1200px) */
-@media (max-width: 1200px) {
+/* LAPTOPS & LARGE TABLETS (up to 1650px) */
+@media (max-width: 1650px) {
     .nav-link {
-        padding: 0.5rem 0.5rem;
-        font-size: 0.85rem;
+        padding: 0.4rem 0.5rem;
+        font-size: 0.88rem;
+    }
+    .chevron-icon {
+        width: 7px;
+        height: 7px;
+        margin-left: 2px;
     }
     .desktop-nav {
-        gap: 0.2rem;
+        gap: 0.3rem;
+    }
+    .brand-logo {
+        height: 2.2rem;
+    }
+    .action-btn {
+        width: 34px;
+        height: 34px;
+    }
+    .action-btn svg {
+        width: 18px;
+        height: 18px;
+    }
+    .account-btn {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.85rem;
+    }
+    .header-actions {
+        gap: 0.4rem;
+    }
+    .navbar-wrapper {
+        padding: 0 1.25rem;
     }
 }
+
+/* SMALL LAPTOPS (up to 1350px) */
+@media (max-width: 1350px) {
+    .nav-link {
+        padding: 0.3rem 0.35rem;
+        font-size: 0.82rem;
+    }
+    .desktop-nav {
+        gap: 0.15rem;
+    }
+    .brand-logo {
+        height: 2rem;
+    }
+    .account-btn {
+        padding: 0.35rem 0.7rem;
+        font-size: 0.8rem;
+    }
+    .navbar-wrapper {
+        padding: 0 0.5rem;
+    }
+    .lang-btn span {
+        font-size: 0.75rem;
+    }
+}
+
 
 /* TABLET (up to 992px) */
 @media (max-width: 992px) {
