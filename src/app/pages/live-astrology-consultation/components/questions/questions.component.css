@@ -1,0 +1,35 @@
+/* ============================================================
+   4. QUESTIONS YOU CAN ASK SECTION
+   ============================================================ */
+.questions-section {
+    background: linear-gradient(135deg, rgba(var(--primary-color-rgb), 0.03), rgba(var(--accent-color-rgb), 0.03));
+}
+
+.question-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.question-chip {
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    padding: 0.75rem 1.5rem;
+    border-radius: 30px;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text-dark);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.question-chip:hover {
+    border-color: var(--primary-color);
+    background: var(--primary-color);
+    color: #fff;
+    transform: scale(1.05);
+}

@@ -1,0 +1,122 @@
+/* ============================================================
+   1. TRUST BANNER SECTION (Floating under main hero)
+   ============================================================ */
+.trust-banner-section {
+    position: relative;
+    z-index: 10;
+    margin-top: -3.5rem; /* pull up over the banner */
+    margin-bottom: 3rem;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+.trust-banner-container {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 1.25rem 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1100px;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.08), 0 4px 12px rgba(0, 0, 0, 0.04);
+    border: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+.trust-banner-item {
+    display: flex;
+    align-items: center;
+    gap: 1.15rem;
+    padding: 0 0.5rem;
+}
+
+.trust-banner-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.icon-shield {
+    background: #f3f0ff;
+    color: #7240ff;
+}
+
+.icon-user {
+    background: #fff4e5;
+    color: #ff9800;
+}
+
+.icon-clock {
+    background: #ebfbee;
+    color: #4caf50;
+}
+
+.icon-users {
+    background: #e8f0fe;
+    color: #4285f4;
+}
+
+.trust-banner-text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.trust-banner-title {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin: 0;
+}
+
+.trust-banner-desc {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: #888;
+    margin: 0;
+}
+
+.trust-banner-divider {
+    width: 1px;
+    height: 45px;
+    background: rgba(0, 0, 0, 0.06);
+}
+
+@media (max-width: 1024px) {
+    .trust-banner-container {
+        flex-wrap: wrap;
+        gap: 1.5rem;
+        justify-content: space-around;
+        padding: 1.5rem;
+    }
+    
+    .trust-banner-divider {
+        display: none;
+    }
+    
+    .trust-banner-item {
+        width: 45%;
+    }
+}
+
+@media (max-width: 600px) {
+    .trust-banner-item {
+        width: 100%;
+        justify-content: flex-start;
+    }
+    
+    .trust-banner-container {
+        margin-top: -1.5rem;
+        border-radius: 12px;
+    }
+    
+    .trust-banner-section {
+        margin-top: -2rem;
+        padding: 0 1rem;
+    }
+}

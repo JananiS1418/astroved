@@ -1,0 +1,96 @@
+/* ============================================================
+   8. CLIENT TESTIMONIAL VIDEOS SECTION
+   ============================================================ */
+.video-testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.video-card {
+    background: #fff;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+    transition: transform 0.3s ease;
+}
+
+.video-card:hover {
+    transform: translateY(-8px);
+}
+
+.video-thumbnail {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.video-thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.video-card:hover .video-thumbnail img {
+    transform: scale(1.05);
+}
+
+.play-btn-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-color);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.video-card:hover .play-btn-overlay {
+    background: var(--primary-color);
+    color: #fff;
+    transform: translate(-50%, -50%) scale(1.1);
+}
+
+.test-content {
+    padding: 1.5rem;
+}
+
+.test-rating {
+    margin-bottom: 0.75rem;
+}
+
+.test-quote {
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: var(--text-dark);
+    font-style: italic;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.test-author {
+    display: flex;
+    flex-direction: column;
+}
+
+.author-name {
+    font-weight: 700;
+    color: var(--primary-color);
+    font-size: 1rem;
+}
+
+.author-type {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    font-weight: 500;
+}
