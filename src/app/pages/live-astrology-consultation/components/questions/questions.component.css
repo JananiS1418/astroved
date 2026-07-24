@@ -2,8 +2,13 @@
 
 .premium-questions-section.compact {
     position: relative;
-    padding: 1rem 1rem 0 1rem;
-    background: radial-gradient(circle at top center, #faf6ff 0%, #f9f9f9 70%, #ffffff 100%);
+    padding: 1.5rem 2rem 3rem 2rem;
+    margin: 0.5rem auto 1rem auto;
+    max-width: 1360px;
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+    border: 1px solid rgba(0, 0, 0, 0.04);
     overflow: hidden;
     z-index: 1;
     font-family: 'Outfit', sans-serif;
@@ -28,7 +33,7 @@
 
 /* Title Area Decorations */
 .title-area {
-    margin-bottom: 1.5rem;
+    margin-bottom: 2.5rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -60,25 +65,26 @@
 
 .section-title {
     font-family: 'Playfair Display', serif;
-    font-size: 1.8rem;
-    font-weight: 500;
-    color: #334155;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #2b3b5e;
     line-height: 1;
-    margin-bottom: 0.2rem;
-    letter-spacing: 0.5px;
+    margin-bottom: 0.5rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
 }
 
 .serif-highlight {
     font-family: 'Playfair Display', serif;
-    font-size: 4.2rem;
+    font-size: 4.5rem;
     color: #6868f9;
-    font-weight: 600;
+    font-weight: 700;
     margin: 0 0 1rem 0;
     line-height: 1;
 }
 
 .section-subtitle {
-    font-size: 1rem;
+    font-size: 1.1rem;
     color: #64748b;
     margin-top: 0.5rem;
     margin-bottom: 0;
@@ -91,10 +97,10 @@
 /* Compact Pills Container */
 .compact-pills-container {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 0.8rem;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.2rem;
     padding: 0;
-    max-width: 1400px;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
