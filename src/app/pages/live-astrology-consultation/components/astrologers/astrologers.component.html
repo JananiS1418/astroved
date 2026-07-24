@@ -4,106 +4,33 @@
     <p class="section-subtitle text-center">Connect with highly qualified, verified Vedic astrologers from India.</p>
     
     <div class="astrologers-grid">
-      <!-- Astrologer 1 -->
-      <div class="astrologer-card">
+      <div class="astrologer-card" *ngFor="let astro of astrologers">
         <div class="astro-header">
           <div class="astro-image-wrap">
-            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Astrologer 1" class="astro-img">
-            <span class="online-status active"></span>
+            <img [src]="astro.image" [alt]="astro.name" class="astro-img">
+            <span class="online-status" [ngClass]="astro.status"></span>
           </div>
           <div class="astro-basic-info">
-            <h3 class="astro-name">Pt. Ramesh Sharma</h3>
+            <h3 class="astro-name">{{ astro.name }}</h3>
             <div class="astro-rating">
               <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="#FFC107" stroke="#FFC107" stroke-width="1"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-              <span>4.9 (450+ reviews)</span>
+              <span>{{ astro.rating }}</span>
             </div>
-            <p class="astro-experience">15 Years Exp.</p>
+            <p class="astro-experience">{{ astro.experience }}</p>
           </div>
         </div>
         <div class="astro-details">
           <div class="detail-row">
             <span class="detail-label">Skills:</span>
-            <span class="detail-val">Vedic, Numerology, Vastu</span>
+            <span class="detail-val">{{ astro.skills }}</span>
           </div>
           <div class="detail-row">
             <span class="detail-label">Languages:</span>
-            <span class="detail-val">English, Hindi</span>
+            <span class="detail-val">{{ astro.languages }}</span>
           </div>
           <div class="detail-row price-row">
             <span class="detail-label">Price:</span>
-            <span class="detail-val price-highlight">$45 / 30 min</span>
-          </div>
-        </div>
-        <div class="astro-actions">
-          <button class="btn-outline view-profile-btn">View Profile</button>
-          <button class="btn-primary book-btn">Book Now</button>
-        </div>
-      </div>
-      
-      <!-- Astrologer 2 -->
-      <div class="astrologer-card">
-        <div class="astro-header">
-          <div class="astro-image-wrap">
-            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Astrologer 2" class="astro-img">
-            <span class="online-status active"></span>
-          </div>
-          <div class="astro-basic-info">
-            <h3 class="astro-name">Dr. Meenakshi Iyer</h3>
-            <div class="astro-rating">
-              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="#FFC107" stroke="#FFC107" stroke-width="1"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-              <span>5.0 (820+ reviews)</span>
-            </div>
-            <p class="astro-experience">22 Years Exp.</p>
-          </div>
-        </div>
-        <div class="astro-details">
-          <div class="detail-row">
-            <span class="detail-label">Skills:</span>
-            <span class="detail-val">Nadi, Prasna, Vedic</span>
-          </div>
-          <div class="detail-row">
-            <span class="detail-label">Languages:</span>
-            <span class="detail-val">English, Tamil</span>
-          </div>
-          <div class="detail-row price-row">
-            <span class="detail-label">Price:</span>
-            <span class="detail-val price-highlight">$55 / 30 min</span>
-          </div>
-        </div>
-        <div class="astro-actions">
-          <button class="btn-outline view-profile-btn">View Profile</button>
-          <button class="btn-primary book-btn">Book Now</button>
-        </div>
-      </div>
-      
-      <!-- Astrologer 3 -->
-      <div class="astrologer-card">
-        <div class="astro-header">
-          <div class="astro-image-wrap">
-            <img src="https://randomuser.me/api/portraits/men/68.jpg" alt="Astrologer 3" class="astro-img">
-            <span class="online-status busy"></span>
-          </div>
-          <div class="astro-basic-info">
-            <h3 class="astro-name">Acharya Vinod</h3>
-            <div class="astro-rating">
-              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="#FFC107" stroke="#FFC107" stroke-width="1"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-              <span>4.8 (310+ reviews)</span>
-            </div>
-            <p class="astro-experience">10 Years Exp.</p>
-          </div>
-        </div>
-        <div class="astro-details">
-          <div class="detail-row">
-            <span class="detail-label">Skills:</span>
-            <span class="detail-val">Tarot, Vedic, Face Reading</span>
-          </div>
-          <div class="detail-row">
-            <span class="detail-label">Languages:</span>
-            <span class="detail-val">English, Hindi, Telugu</span>
-          </div>
-          <div class="detail-row price-row">
-            <span class="detail-label">Price:</span>
-            <span class="detail-val price-highlight">$35 / 30 min</span>
+            <span class="detail-val price-highlight">{{ astro.price }}</span>
           </div>
         </div>
         <div class="astro-actions">
