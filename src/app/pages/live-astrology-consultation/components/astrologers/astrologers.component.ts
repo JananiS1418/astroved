@@ -52,7 +52,16 @@ export class AstrologersComponent {
     }
   ];
 
-  getVisibleSkills(skills: string[]): string {
-    return skills.slice(0, 4).join(', ');
+  getTruncatedText(items: string | string[], limit: number = 42): string {
+    const text = Array.isArray(items) ? items.join(', ') : items;
+    if (text.length > limit) {
+      return text.substring(0, limit).trim();
+    }
+    return text;
+  }
+
+  isTruncated(items: string | string[], limit: number = 42): boolean {
+    const text = Array.isArray(items) ? items.join(', ') : items;
+    return text.length > limit;
   }
 }

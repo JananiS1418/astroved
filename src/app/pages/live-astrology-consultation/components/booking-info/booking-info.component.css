@@ -2,7 +2,7 @@
    6. TIME ZONE & BOOKING INFO SECTION
    ============================================================ */
 .booking-info-section {
-    padding: 2rem 1rem 4rem 1rem;
+    padding: 2rem 1rem 1.5rem 1rem;
     background-color: #f8f9fa;
     display: flex;
     justify-content: center;
