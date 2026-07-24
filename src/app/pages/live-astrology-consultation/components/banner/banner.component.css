@@ -406,6 +406,38 @@
         width: 100%;
         justify-content: center;
     }
+
+    /* Fix Steps section overflow on mobile */
+    .steps-box {
+        padding: 1rem 0.5rem;
+    }
+
+    .step-mockup {
+        padding: 1rem 0.5rem;
+    }
+
+    .mockup-profile {
+        padding: 0.8rem;
+    }
+
+    .prof-header {
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+
+    .prof-action {
+        margin-left: 0;
+        width: 100%;
+        align-items: stretch;
+    }
+
+    .book-btn {
+        width: 100%;
+    }
+
+    .timeline-tabs {
+        gap: 0.5rem;
+    }
 }
 
 /* --- Booking Steps Dropdown --- */
