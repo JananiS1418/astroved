@@ -11,6 +11,8 @@
     justify-content: center;
     gap: 8px;
     margin-bottom: 0.5rem;
+    flex-wrap: wrap;
+    text-align: center;
 }
 
 .premium-section-label .sun-icon {
@@ -50,7 +52,7 @@
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 600px) {
     .astrologers-grid {
         grid-template-columns: 1fr;
     }
