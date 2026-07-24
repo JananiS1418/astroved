@@ -21,6 +21,23 @@ export class NavbarComponent {
 
   toggleMobileMenu() {
     this.isMobileMenuOpen.update(v => !v);
+    if (!this.isMobileMenuOpen()) {
+      this.activeMobileDropdown.set(null); // Reset when closing
+      document.body.style.overflow = '';
+    } else {
+      document.body.style.overflow = 'hidden';
+    }
+  }
+
+  activeMobileDropdown = signal<string | null>(null);
+
+  toggleMobileDropdown(menu: string, event: Event) {
+    event.preventDefault();
+    if (this.activeMobileDropdown() === menu) {
+      this.activeMobileDropdown.set(null);
+    } else {
+      this.activeMobileDropdown.set(menu);
+    }
   }
 
   toggleSearch() {

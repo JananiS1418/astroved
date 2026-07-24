@@ -14,5 +14,14 @@ export class BannerComponent {
   toggleSteps(event: Event) {
     event.preventDefault();
     this.showSteps = !this.showSteps;
+    
+    if (this.showSteps) {
+      setTimeout(() => {
+        const stepsElement = document.querySelector('.booking-steps-wrapper');
+        if (stepsElement) {
+          stepsElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 150); // slight delay to allow CSS transition to begin
+    }
   }
 }
