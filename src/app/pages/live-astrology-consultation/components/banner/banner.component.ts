@@ -24,4 +24,11 @@ export class BannerComponent {
       }, 150); // slight delay to allow CSS transition to begin
     }
   }
+  scrollToAstrologers(event: Event) {
+    event.preventDefault();
+    const element = document.getElementById('expert-astrologers');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
 }

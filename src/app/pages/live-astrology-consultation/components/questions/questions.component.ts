@@ -8,4 +8,11 @@ import { CommonModule } from '@angular/common';
   templateUrl: './questions.component.html',
   styleUrl: './questions.component.css'
 })
-export class QuestionsComponent {}
+export class QuestionsComponent {
+  scrollToAstrologers() {
+    const element = document.getElementById('expert-astrologers');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+}
