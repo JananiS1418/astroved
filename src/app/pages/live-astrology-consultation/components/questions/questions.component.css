@@ -3,22 +3,14 @@
 .premium-questions-section.compact {
     position: relative;
     padding: 1rem 1rem 0 1rem;
-    background: radial-gradient(circle at top center, #faf6ff 0%, #f9f9f9 70%, #ffffff 100%);
+    background: transparent;
     overflow: hidden;
     z-index: 1;
     font-family: 'Outfit', sans-serif;
 }
 
 .bg-glow {
-    position: absolute;
-    top: -150px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 600px;
-    height: 400px;
-    background: radial-gradient(ellipse, rgba(140, 100, 255, 0.08) 0%, transparent 70%);
-    z-index: -1;
-    pointer-events: none;
+    display: none;
 }
 
 .section-container {

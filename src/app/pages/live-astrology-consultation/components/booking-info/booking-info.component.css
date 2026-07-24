@@ -30,7 +30,8 @@
     letter-spacing: 0.5px;
 }
 
-.title-decor, .bottom-decor {
+.title-decor,
+.bottom-decor {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -212,7 +213,7 @@
     background: #ffffff;
     border: 1px solid #e2e8f0;
     border-radius: 30px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
 }
 
 .dot {
@@ -234,7 +235,7 @@
 /* ============================================================
    RESPONSIVE MEDIA QUERIES
    ============================================================ */
-@media (max-width: 600px) {
+@media (max-width: 850px) {
     .booking-card {
         padding: 1.5rem 1rem;
         gap: 1.5rem;

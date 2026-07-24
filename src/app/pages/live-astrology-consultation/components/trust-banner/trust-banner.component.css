@@ -13,33 +13,18 @@
 }
 
 .trust-banner-container {
-
     position: relative;
     overflow: hidden;
-
     width: 100%;
     max-width: 1120px;
-
     display: flex;
     align-items: center;
     justify-content: space-between;
-
     padding: 1rem 2rem;
-
     border-radius: 22px;
-
     background: #ffffff;
-
-    backdrop-filter: blur(20px);
-
-    border: 1px solid rgba(255, 255, 255, .8);
-
-    box-shadow:
-        0 20px 60px rgba(104, 104, 249, .15),
-        inset 0 2px 10px rgba(255, 255, 255, 0.9);
-
-    animation:
-        floatingCard 6s ease-in-out infinite;
+    box-shadow: none; /* No extra background shadow */
+    animation: floatingCard 6s ease-in-out infinite;
 }
 
 
@@ -330,6 +315,7 @@
         padding: 10px;
         gap: 8px;
     }
+
     .trust-banner-title {
         font-size: 0.85rem;
     }
@@ -382,6 +368,13 @@
 }
 
 @keyframes mobile-trust-pulse {
-    0%, 100% { transform: scale(1) rotate(0deg); }
-    50% { transform: scale(1.1) rotate(5deg); }
+
+    0%,
+    100% {
+        transform: scale(1) rotate(0deg);
+    }
+
+    50% {
+        transform: scale(1.1) rotate(5deg);
+    }
 }
