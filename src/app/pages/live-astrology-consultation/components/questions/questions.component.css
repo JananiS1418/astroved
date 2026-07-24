@@ -2,7 +2,7 @@
 
 .premium-questions-section.compact {
     position: relative;
-    padding: 1rem 1rem 3rem 1rem;
+    padding: 1rem 1rem 0 1rem;
     background: radial-gradient(circle at top center, #faf6ff 0%, #f9f9f9 70%, #ffffff 100%);
     overflow: hidden;
     z-index: 1;
@@ -60,7 +60,7 @@
 
 .section-title {
     font-family: 'Playfair Display', serif;
-    font-size: 1.6rem;
+    font-size: 1.8rem;
     font-weight: 500;
     color: #334155;
     line-height: 1;
@@ -70,10 +70,10 @@
 
 .serif-highlight {
     font-family: 'Playfair Display', serif;
-    font-size: 3.5rem;
-    color: #311b6b;
+    font-size: 4.2rem;
+    color: #6868f9;
     font-weight: 600;
-    margin: 0;
+    margin: 0 0 1rem 0;
     line-height: 1;
 }
 
@@ -140,7 +140,7 @@
     transform: translateY(-3px) scale(1.02);
     box-shadow: 0 8px 25px rgba(49, 27, 107, 0.08);
     border-color: rgba(199, 169, 114, 0.4);
-    color: #311b6b;
+    color: #6868f9;
     background: #faf6ff;
 }
 
@@ -297,7 +297,7 @@
 .banner-title {
     font-size: 1.15rem;
     font-weight: 600;
-    color: #311b6b;
+    color: #6868f9;
     margin: 0 0 0.2rem 0;
 }
 
@@ -309,7 +309,7 @@
 
 .banner-arrow {
     font-size: 2rem;
-    color: #8c64ff;
+    color: #6868f9;
     font-weight: 300;
     line-height: 1;
     transition: transform 0.3s ease;
