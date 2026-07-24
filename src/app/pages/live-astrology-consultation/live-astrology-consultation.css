@@ -18,6 +18,7 @@ body {
     padding: 0;
     box-sizing: border-box;
     width: 100%;
+    background-color: #f0f2f5;
 }
 
 /* *,
@@ -39,9 +40,13 @@ main {
 
 /* Global Reusable Styles */
 .section-container {
-    max-width: 1240px;
-    margin: 0 auto;
-    padding: 1rem 1rem;
+    max-width: 1360px;
+    margin: 2rem auto;
+    padding: 2.5rem;
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.04);
+    border: 1px solid rgba(0,0,0,0.02);
 }
 
 .section-title {
@@ -67,7 +72,7 @@ main {
 }
 
 .bg-light {
-    background: var(--background-light);
+    background: transparent;
 }
 
 .text-purple {

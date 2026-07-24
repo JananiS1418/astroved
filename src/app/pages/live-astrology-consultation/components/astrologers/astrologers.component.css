@@ -3,8 +3,31 @@
    ============================================================ */
 .astrologers-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+}
+
+@media (max-width: 1200px) {
+    .astrologers-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .astrologers-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.more-link {
+    color: var(--primary-color, #f46b38);
+    text-decoration: none;
+    font-size: 0.9em;
+    font-weight: 600;
+    margin-left: 4px;
+}
+.more-link:hover {
+    text-decoration: underline;
 }
 
 .astrologer-card {
