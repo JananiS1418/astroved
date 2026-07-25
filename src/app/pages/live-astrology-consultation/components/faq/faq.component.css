@@ -6,7 +6,7 @@
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    gap: 1.2rem;
+    gap: 0.5rem;
 }
 
 .faq-item {
@@ -24,7 +24,7 @@ details[open].faq-item {
 }
 
 .faq-question {
-    padding: 1.5rem 2rem;
+    padding: 1rem 2rem;
     font-size: 1.1rem;
     font-weight: 600;
     color: #1e293b;
@@ -95,16 +95,20 @@ details[open] .faq-chevron {
 }
 
 .faq-answer-wrapper {
-    padding: 0 2rem 1.5rem 5rem; /* Indent to match text, not icon */
+    padding: 0 2rem 1rem 5rem; /* Indent to match text, not icon */
 }
 
 .faq-answer {
-    padding: 1.5rem;
+    padding: 1rem 1.5rem;
     background: #f8f8fc;
     border-radius: 8px;
     color: #475569;
     font-size: 0.95rem;
     line-height: 1.6;
+}
+
+.faq-answer p {
+    margin: 0;
 }
 
 @media (max-width: 600px) {

@@ -30,14 +30,16 @@
 }
 
 .title-highlight {
-    background: linear-gradient(135deg, #6868f9, #FF7B00); /* Changed to purple-to-orange gradient to make it pop beautifully on the single word */
+    background: linear-gradient(135deg, #6868f9, #FF7B00);
+    /* Changed to purple-to-orange gradient to make it pop beautifully on the single word */
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
 }
 
 .section-subtitle {
-    margin-bottom: 1.5rem !important; /* Reduced from 3rem */
+    margin-bottom: 1.5rem !important;
+    /* Reduced from 3rem */
 }
 
 .astrologers-grid {
@@ -65,6 +67,7 @@
     font-weight: 600;
     margin-left: 4px;
 }
+
 .more-link:hover {
     text-decoration: underline;
 }
@@ -126,7 +129,7 @@
     border-radius: 50%;
     object-fit: cover;
     border: 2px solid #ffffff;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .online-status {
@@ -140,9 +143,17 @@
     z-index: 2;
 }
 
-.online-status.active { background: #4CAF50; }
-.online-status.busy { background: #FF9800; }
-.online-status.offline { background: #9E9E9E; }
+.online-status.active {
+    background: #4CAF50;
+}
+
+.online-status.busy {
+    background: #FF9800;
+}
+
+.online-status.offline {
+    background: #9E9E9E;
+}
 
 .astro-basic-info {
     flex: 1;
@@ -289,6 +300,203 @@
     transform: skewX(-20deg);
     transition: all 0.6s ease;
     z-index: -1;
+}
+
+/* ============================================================
+   CARD LEVEL BOOKING UI STYLES
+   ============================================================ */
+.astrologer-card {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 2rem 1.5rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    border: 1px solid rgba(0, 0, 0, 0.04);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    min-height: 400px;
+}
+
+.astrologer-card.booking-active {
+    padding: 0; /* Remove padding so booking UI fills the card */
+    box-shadow: 0 8px 30px rgba(104, 104, 249, 0.15);
+    border-color: rgba(104, 104, 249, 0.3);
+    z-index: 10;
+}
+
+.card-front {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    animation: fadeInOverlay 0.3s ease;
+}
+
+.card-booking-ui {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background: #ffffff;
+    animation: scaleInModal 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.card-booking-ui .overlay-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    border-bottom: 1px solid #eaeaea;
+    background: #fafafa;
+}
+
+.card-booking-ui .overlay-title {
+    margin: 0;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #1a1a2e;
+}
+
+.card-booking-ui .astro-name-modal {
+    color: #6868f9;
+}
+
+.card-booking-ui .close-btn {
+    background: transparent;
+    border: none;
+    color: #888;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.2s, transform 0.2s;
+    padding: 4px;
+}
+
+.card-booking-ui .close-btn:hover {
+    color: #e53935;
+    transform: scale(1.1);
+}
+
+.card-booking-ui .modal-body {
+    padding: 0;
+    background: #ffffff;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+/* Date Tabs */
+.card-booking-ui .date-tabs {
+    display: flex;
+    background: #f4f4f4;
+    border-bottom: 1px solid #e0e0e0;
+    margin: 1rem 1rem 1.5rem 1rem;
+    border-radius: 4px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.card-booking-ui .date-tab {
+    flex: 1;
+    text-align: center;
+    padding: 0.6rem;
+    font-weight: 600;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border-bottom: 3px solid transparent;
+}
+
+.card-booking-ui .date-tab:first-child {
+    color: #e57373;
+}
+
+.card-booking-ui .date-tab.active {
+    color: #72a762;
+    border-bottom-color: #72a762;
+    background: #ffffff;
+}
+
+/* Time Slots Container */
+.card-booking-ui .time-slots-container {
+    padding: 0 1rem 1rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    overflow-y: auto;
+    flex: 1;
+}
+
+/* Make it scroll nicely */
+.card-booking-ui .time-slots-container::-webkit-scrollbar {
+    width: 6px;
+}
+.card-booking-ui .time-slots-container::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+    border-radius: 10px;
+}
+.card-booking-ui .time-slots-container::-webkit-scrollbar-thumb {
+    background: #c1c1c1; 
+    border-radius: 10px;
+}
+.card-booking-ui .time-slots-container::-webkit-scrollbar-thumb:hover {
+    background: #a8a8a8; 
+}
+
+.card-booking-ui .time-category {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.card-booking-ui .category-title {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #444;
+}
+
+.card-booking-ui .category-icon {
+    color: #666;
+    width: 16px;
+    height: 16px;
+}
+
+.card-booking-ui .pills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.card-booking-ui .time-pill {
+    background: #ffffff;
+    border: 1px solid #72a762;
+    color: #72a762;
+    padding: 0.3rem 0.8rem;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.card-booking-ui .time-pill:hover {
+    background: #72a762;
+    color: #ffffff;
+    box-shadow: 0 2px 6px rgba(114, 167, 98, 0.3);
+}
+
+@keyframes fadeInOverlay {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes scaleInModal {
+    from { transform: scale(0.95); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
 }
 
 .btn-primary:hover::after {
