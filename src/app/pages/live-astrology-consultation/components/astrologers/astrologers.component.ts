@@ -61,17 +61,51 @@ export class AstrologersComponent {
   activeDate: string = 'Tue, Jul 28';
   selectedTimeSlot: string | null = null;
   bookingDates = ['Mon, Jul 27', 'Tue, Jul 28', 'Wed, Jul 29'];
+  bookingStep: number = 1;
+  selectedDuration: number = 30;
 
   openBooking(astro: any) {
     this.selectedAstrologerForBooking = astro;
+    this.bookingStep = 1;
+    this.selectedTimeSlot = null;
+    this.selectedDuration = 30;
     document.body.style.overflow = 'hidden';
   }
 
   closeBooking() {
     this.selectedAstrologerForBooking = null;
+    this.bookingStep = 1;
     if (!this.selectedAstrologer) {
       document.body.style.overflow = 'auto';
     }
+  }
+
+  nextBookingStep() {
+    if (this.bookingStep < 3) {
+      this.bookingStep++;
+    }
+  }
+
+  prevBookingStep() {
+    if (this.bookingStep > 1) {
+      this.bookingStep--;
+    }
+  }
+
+  setDuration(mins: number) {
+    this.selectedDuration = mins;
+  }
+
+  getPriceForDuration(): string {
+    if (!this.selectedAstrologerForBooking) return '';
+    // Assuming price string is "$45 / 30 min", extract the number
+    const basePriceMatch = this.selectedAstrologerForBooking.price.match(/\$(\d+)/);
+    const basePrice = basePriceMatch ? parseInt(basePriceMatch[1], 10) : 45;
+    
+    if (this.selectedDuration === 60) {
+      return `$${basePrice * 2}`;
+    }
+    return `$${basePrice}`;
   }
 
   selectDate(date: string) {

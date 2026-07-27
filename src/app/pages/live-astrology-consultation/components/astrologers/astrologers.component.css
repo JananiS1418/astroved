@@ -207,8 +207,13 @@
 }
 
 .detail-label {
-    color: #888;
-    font-weight: 700;
+    background: linear-gradient(to right, #f97316, #6868f9);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    display: inline-block;
+    font-weight: 800;
     font-size: 0.75rem;
     text-transform: uppercase;
     letter-spacing: 0.5px;
@@ -513,7 +518,7 @@
     padding: 3rem;
     position: relative;
     overflow-y: auto;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(0,0,0,0.02);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(0, 0, 0, 0.02);
     animation: scaleInModal 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
@@ -541,7 +546,7 @@
     color: #94a3b8;
     cursor: pointer;
     transition: all 0.2s ease;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
 }
 
 .modal-close-elegant:hover {
@@ -571,7 +576,7 @@
     border-radius: 50%;
     object-fit: cover;
     border: 4px solid #ffffff;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(0,0,0,0.03);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(0, 0, 0, 0.03);
     transition: transform 0.3s ease;
 }
 
@@ -638,6 +643,7 @@
         opacity: 0;
         backdrop-filter: blur(0px);
     }
+
     to {
         opacity: 1;
         backdrop-filter: blur(12px);
@@ -649,6 +655,7 @@
         transform: scale(0.92) translateY(20px);
         opacity: 0;
     }
+
     to {
         transform: scale(1) translateY(0);
         opacity: 1;
@@ -667,7 +674,7 @@
     flex-direction: column;
     position: relative;
     border-radius: 20px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(0,0,0,0.02);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(0, 0, 0, 0.02);
     animation: scaleInModal 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
     overflow: hidden;
 }
@@ -679,7 +686,7 @@
 }
 
 .booking-header {
-    padding: 2.5rem 2.5rem 1.5rem;
+    padding: 2rem 2.5rem 1rem;
     text-align: center;
 }
 
@@ -738,14 +745,16 @@
     padding: 1.2rem 1rem;
     font-size: 1rem;
     font-weight: 600;
-    color: #f97316; /* Orange color for unselected */
+    color: #f97316;
+    /* Orange color for unselected */
     cursor: pointer;
     position: relative;
     transition: all 0.2s ease;
 }
 
 .date-btn.active {
-    color: #4da541; /* Green color for selected */
+    color: #4da541;
+    /* Green color for selected */
 }
 
 .date-btn.active::after {
@@ -759,7 +768,7 @@
 }
 
 .date-btn:hover:not(.active) {
-    background: rgba(0,0,0,0.02);
+    background: rgba(0, 0, 0, 0.02);
 }
 
 /* Time Slots */
@@ -845,16 +854,235 @@
 }
 
 /* ==========================================================
+   BOOKING MODAL STEPS 2 & 3
+========================================================== */
+.booking-mini-profile {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 2rem 2.5rem;
+    border-bottom: 1px solid #e2e8f0;
+    background: #f8fafc;
+}
+
+.mini-avatar img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #ffffff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.mini-details p {
+    font-size: 0.9rem;
+    color: #475569;
+    margin: 0.2rem 0;
+}
+
+.mini-details .mini-name {
+    font-size: 1.4rem;
+    color: #f97316;
+    margin: 0 0 0.5rem 0;
+    font-weight: 700;
+}
+
+.booking-summary-box {
+    padding: 1rem 2.5rem 2rem;
+    flex: 1;
+}
+
+.summary-datetime {
+    font-size: 1.05rem;
+    color: #1e293b;
+    margin-bottom: 2rem;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    padding: 1rem 1.2rem;
+    border-radius: 8px;
+    font-weight: 600;
+}
+
+.summary-datetime .timezone {
+    color: #64748b;
+    font-size: 0.9rem;
+    font-weight: 400;
+}
+
+.summary-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px dashed #e2e8f0;
+    font-size: 1.05rem;
+}
+
+.summary-row:last-of-type {
+    border-bottom: none;
+    margin-bottom: 1.5rem;
+}
+
+.summary-label {
+    width: 160px;
+    color: #64748b;
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+.summary-value {
+    color: #0f172a;
+    font-weight: 600;
+}
+
+.duration-options {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.radio-label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+}
+
+.radio-label input[type="radio"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 18px;
+    height: 18px;
+    border: 2px solid #cbd5e1;
+    border-radius: 50%;
+    margin: 0;
+    cursor: pointer;
+    position: relative;
+    outline: none;
+    display: inline-block;
+}
+
+.radio-label input[type="radio"]:checked {
+    border-color: #f97316;
+}
+
+.radio-label input[type="radio"]:checked::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 10px;
+    height: 10px;
+    background-color: #f97316;
+    border-radius: 50%;
+}
+
+.price-val {
+    color: #f97316;
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.summary-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.summary-actions.center {
+    justify-content: center;
+}
+
+.summary-actions .btn-primary,
+.summary-actions .btn-outline {
+    padding: 0.8rem 2rem;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.summary-actions .btn-outline {
+    background: transparent;
+    border: 1px solid #cbd5e1;
+    color: #475569;
+}
+
+.summary-actions .btn-outline:hover {
+    background: #f1f5f9;
+}
+
+.final-step .step3-title {
+    font-size: 1.6rem;
+    margin-bottom: 1.5rem;
+    color: #0f172a;
+    text-align: center;
+}
+
+.step3-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    color: #475569;
+    margin-bottom: 1rem;
+    font-size: 1.05rem;
+}
+
+.text-orange {
+    color: #f97316;
+}
+
+.step3-datetime {
+    font-size: 1.05rem;
+    color: #1e293b;
+    margin-bottom: 1.5rem;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    padding: 1rem 1.2rem;
+    border-radius: 8px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.step3-bold {
+    font-weight: 600;
+    color: #334155;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-size: 1.05rem;
+}
+
+.step3-yellow-box {
+    background: #fffbeb;
+    border: 1px solid #fde047;
+    border-left: 4px solid #f59e0b;
+    color: #92400e;
+    padding: 1.2rem 1.5rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+}
+
+.proceed-btn {
+    width: 100%;
+    max-width: 300px;
+}
+
+/* ==========================================================
    MOBILE RESPONSIVENESS
 ========================================================== */
 @media (max-width: 768px) {
+
     /* Profile Modal Mobile */
     .modal-content.elegant-modal {
         padding: 1.5rem;
         width: 95%;
         border-radius: 16px;
     }
-    
+
     .elegant-modal-header {
         flex-direction: column;
         align-items: center;
@@ -901,7 +1129,50 @@
     }
 
     .booking-header {
-        padding: 2rem 1.5rem 1rem;
+        padding: 3rem 1.5rem 1.5rem;
+    }
+
+    .booking-mini-profile {
+        flex-direction: column;
+        text-align: center;
+        padding: 3rem 1.5rem 1.5rem;
+        gap: 1rem;
+    }
+
+    .booking-summary-box {
+        padding: 1.5rem;
+    }
+
+    /* These keep their row layout on tablet */
+}
+
+@media (max-width: 576px) {
+
+    /* Extreme Stacking for Mobile Phones Only */
+    .summary-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+
+    .summary-label {
+        width: 100%;
+        font-size: 0.95rem;
+    }
+
+    .duration-options {
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+
+    .summary-actions {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .summary-actions .btn-primary,
+    .summary-actions .btn-outline {
+        width: 100%;
     }
 
     .booking-title {
