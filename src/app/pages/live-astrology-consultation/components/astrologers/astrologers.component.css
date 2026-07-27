@@ -118,7 +118,7 @@
     width: 100%;
     height: 100%;
     border-radius: 50%;
-    object-fit: cover;
+    object-fit: fill;
     border: 3px solid #f4eefe;
 }
 
@@ -491,16 +491,23 @@
 /* Elegant Profile Modal */
 .modal-overlay {
     position: fixed;
-    top: 0; left: 0; width: 100vw; height: 100vh;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
     background: rgba(0, 0, 0, 0.6);
     z-index: 1000;
-    display: flex; justify-content: center; align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     animation: fadeIn 0.2s ease-out forwards;
 }
 
 .modal-content.elegant-modal {
     background: #ffffff;
-    width: 90%; max-width: 700px; max-height: 85vh;
+    width: 90%;
+    max-width: 700px;
+    max-height: 85vh;
     border-radius: 12px;
     padding: 2.5rem;
     position: relative;
@@ -511,36 +518,48 @@
 .modal-content.elegant-modal::-webkit-scrollbar {
     width: 6px;
 }
+
 .modal-content.elegant-modal::-webkit-scrollbar-thumb {
-    background: #d1d5db; border-radius: 4px;
+    background: #d1d5db;
+    border-radius: 4px;
 }
 
 .modal-close-elegant {
     position: absolute;
-    top: 1.5rem; right: 1.5rem;
-    width: 36px; height: 36px;
+    top: 1.5rem;
+    right: 1.5rem;
+    width: 36px;
+    height: 36px;
     background: transparent;
-    border: 1px solid #e5e7eb; border-radius: 4px;
-    display: flex; justify-content: center; align-items: center;
+    border: 1px solid #e5e7eb;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     color: #9ca3af;
     cursor: pointer;
     transition: all 0.2s ease;
 }
+
 .modal-close-elegant:hover {
-    background: #f3f4f6; color: #111827;
+    background: #f3f4f6;
+    color: #111827;
 }
 
 .elegant-modal-header {
-    display: flex; align-items: flex-start; gap: 2rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 2rem;
     margin-bottom: 2rem;
     padding-bottom: 1.5rem;
     border-bottom: 1px solid #f3f4f6;
 }
 
 .elegant-modal-avatar img {
-    width: 140px; height: 140px;
+    width: 140px;
+    height: 140px;
     border-radius: 8px;
-    object-fit: cover;
+    object-fit: fill;
     border: 1px solid #f3f4f6;
 }
 
@@ -552,7 +571,9 @@
 }
 
 .elegant-lang-text {
-    display: flex; align-items: center; gap: 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
     color: #4b5563;
     font-size: 1rem;
     font-weight: 500;
@@ -572,7 +593,15 @@
     margin-bottom: 1.2rem;
 }
 
-@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
 
 @keyframes fadeInOverlay {
     from {
