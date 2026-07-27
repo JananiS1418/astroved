@@ -33,6 +33,13 @@
     letter-spacing: 0.5px;
 }
 
+.booking-subtitle {
+    font-size: 1rem;
+    color: #4a4d56;
+    margin: 0 0 1rem 0;
+    font-family: 'Outfit', sans-serif;
+}
+
 .title-decor,
 .bottom-decor {
     display: flex;
@@ -111,6 +118,7 @@
     font-weight: 700;
     color: #6868f9;
 }
+
 
 .language-row {
     display: flex;

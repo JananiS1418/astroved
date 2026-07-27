@@ -11,7 +11,7 @@
 }
 
 :host {
-    font-family: 'Inter', 'Roboto', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-family: 'Outfit', 'Inter', 'Roboto', -apple-system, BlinkMacSystemFont, sans-serif;
     display: block;
 }
 
@@ -100,18 +100,14 @@
     transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     white-space: nowrap;
     background: transparent;
+    font-family: 'Outfit', sans-serif;
 }
 
 .nav-link span {
     transition: color 0.3s ease;
 }
 
-/* FOCUS MODE: Dim and blur all siblings when one is hovered */
-.desktop-nav:has(> *:hover)>*:not(:hover) {
-    opacity: 0.4;
-    filter: blur(1.5px);
-    transform: scale(0.96);
-}
+
 
 /* Elevate the hovered item */
 .desktop-nav>*:hover>.nav-link,
@@ -205,6 +201,7 @@
     /* slightly smaller to match nav links better */
     font-weight: 400;
     transition: all 0.2s ease;
+    font-family: 'Outfit', sans-serif;
 }
 
 .dropdown-divider {
@@ -516,6 +513,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    font-family: 'Outfit', sans-serif;
 }
 
 .mobile-nav-link:hover {

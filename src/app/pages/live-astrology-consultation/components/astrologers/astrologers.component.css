@@ -62,11 +62,11 @@
 
 .astrologer-card {
     background: #ffffff;
-    border-radius: 16px;
-    padding: 2rem 1.5rem;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04);
     transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-    border: 1px solid rgba(0, 0, 0, 0.04);
+    border: 1px solid rgba(0, 0, 0, 0.06);
     display: flex;
     flex-direction: column;
     position: relative;
@@ -95,20 +95,23 @@
     pointer-events: none;
 }
 
-/* Horizontal Header */
 .astro-header-row {
     display: flex;
-    gap: 1.5rem;
     align-items: center;
+    gap: 1.2rem;
     margin-bottom: 1.5rem;
+    text-align: left;
+    border-bottom: 1px solid #f0f0f0;
+    padding-bottom: 1.5rem;
 }
 
 .astro-image-wrap {
     position: relative;
-    width: 80px;
-    height: 80px;
+    width: 85px;
+    height: 85px;
     border-radius: 50%;
-    padding: 4px;
+    background: transparent;
+    padding: 0;
 }
 
 .astro-img {
@@ -116,8 +119,11 @@
     height: 100%;
     border-radius: 50%;
     object-fit: cover;
-    border: 2px solid #ffffff;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border: 3px solid #f4eefe;
+}
+
+.astro-title-wrap {
+    flex: 1;
 }
 
 .online-status {
@@ -151,68 +157,69 @@
     font-size: 1.25rem;
     font-weight: 800;
     color: #1a1a2e;
-    margin: 0 0 0.25rem 0;
+    margin: 0 0 0.2rem 0;
 }
 
 .astro-rating-row {
     display: flex;
     align-items: center;
+    justify-content: flex-start;
     gap: 0.3rem;
     font-size: 0.85rem;
-    margin-bottom: 0.25rem;
+    margin-bottom: 0.3rem;
 }
 
 .rating-val {
-    font-weight: 600;
+    font-weight: 700;
     color: #333;
 }
 
 .astro-experience {
-    font-size: 0.8rem;
-    color: #6868f9;
+    font-size: 0.85rem;
+    color: #888;
     font-weight: 600;
     margin: 0;
 }
 
 /* Simple Details */
-.astro-details-simple {
-    margin-bottom: 1.5rem;
-    flex-grow: 1;
+.card-front {
+    flex: 1;
     display: flex;
     flex-direction: column;
 }
 
+.astro-details-simple {
+    background: #fdfdfd;
+    border: 1px solid #f0f0f0;
+    border-radius: 16px;
+    padding: 1rem 1.2rem;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
 .detail-row {
     display: flex;
-    margin-bottom: 0.5rem;
-    font-size: 0.95rem;
+    flex-direction: column;
+    gap: 4px;
 }
 
 .detail-label {
-    width: 90px;
     color: #888;
-    font-weight: 500;
-    font-size: 0.85rem;
+    font-weight: 700;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 .detail-val {
-    flex: 1;
     color: #333;
     font-weight: 600;
-    font-size: 0.85rem;
-}
-
-.price-row {
-    margin-top: auto;
-    padding-top: 1rem;
-    border-top: 1px dashed #e0e0e0;
-    align-items: center;
-}
-
-.price-highlight {
-    color: #FF7B00;
-    font-size: 1.25rem;
-    font-weight: 800;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    overflow-wrap: break-word;
 }
 
 /* Actions */
@@ -308,7 +315,8 @@
 }
 
 .astrologer-card.booking-active {
-    padding: 0; /* Remove padding so booking UI fills the card */
+    padding: 0;
+    /* Remove padding so booking UI fills the card */
     box-shadow: 0 8px 30px rgba(104, 104, 249, 0.15);
     border-color: rgba(104, 104, 249, 0.3);
     z-index: 10;
@@ -420,16 +428,19 @@
 .card-booking-ui .time-slots-container::-webkit-scrollbar {
     width: 6px;
 }
+
 .card-booking-ui .time-slots-container::-webkit-scrollbar-track {
-    background: #f1f1f1; 
+    background: #f1f1f1;
     border-radius: 10px;
 }
+
 .card-booking-ui .time-slots-container::-webkit-scrollbar-thumb {
-    background: #c1c1c1; 
+    background: #c1c1c1;
     border-radius: 10px;
 }
+
 .card-booking-ui .time-slots-container::-webkit-scrollbar-thumb:hover {
-    background: #a8a8a8; 
+    background: #a8a8a8;
 }
 
 .card-booking-ui .time-category {
@@ -468,23 +479,121 @@
     font-size: 0.75rem;
     font-weight: 600;
     cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.book-btn:hover {
+    background: #e65100;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 107, 0, 0.2);
+}
+
+/* Elegant Profile Modal */
+.modal-overlay {
+    position: fixed;
+    top: 0; left: 0; width: 100vw; height: 100vh;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1000;
+    display: flex; justify-content: center; align-items: center;
+    animation: fadeIn 0.2s ease-out forwards;
+}
+
+.modal-content.elegant-modal {
+    background: #ffffff;
+    width: 90%; max-width: 700px; max-height: 85vh;
+    border-radius: 12px;
+    padding: 2.5rem;
+    position: relative;
+    overflow-y: auto;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+}
+
+.modal-content.elegant-modal::-webkit-scrollbar {
+    width: 6px;
+}
+.modal-content.elegant-modal::-webkit-scrollbar-thumb {
+    background: #d1d5db; border-radius: 4px;
+}
+
+.modal-close-elegant {
+    position: absolute;
+    top: 1.5rem; right: 1.5rem;
+    width: 36px; height: 36px;
+    background: transparent;
+    border: 1px solid #e5e7eb; border-radius: 4px;
+    display: flex; justify-content: center; align-items: center;
+    color: #9ca3af;
+    cursor: pointer;
     transition: all 0.2s ease;
 }
-
-.card-booking-ui .time-pill:hover {
-    background: #72a762;
-    color: #ffffff;
-    box-shadow: 0 2px 6px rgba(114, 167, 98, 0.3);
+.modal-close-elegant:hover {
+    background: #f3f4f6; color: #111827;
 }
 
+.elegant-modal-header {
+    display: flex; align-items: flex-start; gap: 2rem;
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #f3f4f6;
+}
+
+.elegant-modal-avatar img {
+    width: 140px; height: 140px;
+    border-radius: 8px;
+    object-fit: cover;
+    border: 1px solid #f3f4f6;
+}
+
+.elegant-astro-name {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1f2937;
+    margin: 0 0 1rem 0;
+}
+
+.elegant-lang-text {
+    display: flex; align-items: center; gap: 0.75rem;
+    color: #4b5563;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.elegant-section-heading {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #111827;
+    margin: 0 0 1rem 0;
+}
+
+.elegant-bio-text p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: #4b5563;
+    margin-bottom: 1.2rem;
+}
+
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
 @keyframes fadeInOverlay {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
 
 @keyframes scaleInModal {
-    from { transform: scale(0.95); opacity: 0; }
-    to { transform: scale(1); opacity: 1; }
+    from {
+        transform: scale(0.95);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
 }
 
 .btn-primary:hover::after {
