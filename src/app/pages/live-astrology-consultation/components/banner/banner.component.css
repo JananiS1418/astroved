@@ -342,7 +342,7 @@
 }
 
 /* --- Responsive --- */
-@media (max-width: 1024px) {
+@media (max-width: 1250px) {
     .banner-container {
         flex-direction: column;
         align-items: center;

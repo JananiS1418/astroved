@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -9,6 +9,13 @@ import { CommonModule } from '@angular/common';
   styleUrl: './footer.component.css'
 })
 export class FooterComponent {
+  showScrollButton = false;
+
+  @HostListener('window:scroll', [])
+  onWindowScroll() {
+    this.showScrollButton = window.scrollY > 500;
+  }
+
   scrollToTop(event: Event) {
     event.preventDefault();
     window.scrollTo({ top: 0, behavior: 'smooth' });

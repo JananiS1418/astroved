@@ -690,8 +690,8 @@
 }
 
 
-/* TABLET & SMALL LAPTOP (up to 1300px) */
-@media (max-width: 1300px) {
+/* TABLET & SMALL LAPTOP (up to 1450px) */
+@media (max-width: 1450px) {
     .desktop-nav {
         display: none;
     }
