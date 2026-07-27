@@ -9,6 +9,8 @@
     margin-bottom: 2rem;
     padding: 0 2rem;
     display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
 }
 
@@ -377,4 +379,80 @@
     50% {
         transform: scale(1.1) rotate(5deg);
     }
+}
+
+/* ==========================================================
+   BOOKING TICKER
+========================================================== */
+.booking-ticker {
+    margin-top: 1.5rem;
+    width: 100%;
+    overflow: hidden;
+    background: transparent;
+    padding: 10px 0;
+    position: relative;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.ticker-content {
+    display: inline-flex;
+    white-space: nowrap;
+    animation: scrollTicker 30s linear infinite;
+    align-items: center;
+}
+
+.ticker-content:hover {
+    animation-play-state: paused;
+}
+
+.ticker-item {
+    display: inline-flex;
+    align-items: center;
+    font-size: 0.9rem;
+    color: #4a4d56;
+    margin: 0 1rem;
+}
+
+.ticker-item .dot {
+    width: 8px;
+    height: 8px;
+    background-color: #f46b38; /* Accent color */
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 8px;
+    animation: pulseDot 1.5s infinite;
+}
+
+.ticker-item strong {
+    color: #1a1a2e;
+    margin-right: 4px;
+}
+
+.ticker-item .highlight {
+    color: #dfaa43;
+    font-weight: 600;
+    margin: 0 4px;
+}
+
+.ticker-item .time {
+    color: #888;
+    font-size: 0.8rem;
+    margin-left: 4px;
+}
+
+.ticker-separator {
+    color: #c1c1c1;
+    font-size: 0.9rem;
+}
+
+@keyframes scrollTicker {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+@keyframes pulseDot {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.5); opacity: 0.6; }
+    100% { transform: scale(1); opacity: 1; }
 }
