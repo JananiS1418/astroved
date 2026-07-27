@@ -488,31 +488,33 @@
     box-shadow: 0 4px 12px rgba(255, 107, 0, 0.2);
 }
 
-/* Elegant Profile Modal */
+/* Elegant Profile Modal Premium Redesign (Blue/Slate Theme) */
 .modal-overlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(15, 23, 42, 0.4);
+    backdrop-filter: blur(8px);
     z-index: 1000;
     display: flex;
     justify-content: center;
     align-items: center;
-    animation: fadeIn 0.2s ease-out forwards;
+    animation: fadeInOverlay 0.3s ease-out forwards;
 }
 
 .modal-content.elegant-modal {
     background: #ffffff;
     width: 90%;
-    max-width: 700px;
+    max-width: 650px;
     max-height: 85vh;
-    border-radius: 12px;
-    padding: 2.5rem;
+    border-radius: 20px;
+    padding: 3rem;
     position: relative;
     overflow-y: auto;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(0,0,0,0.02);
+    animation: scaleInModal 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 .modal-content.elegant-modal::-webkit-scrollbar {
@@ -520,8 +522,8 @@
 }
 
 .modal-content.elegant-modal::-webkit-scrollbar-thumb {
-    background: #d1d5db;
-    border-radius: 4px;
+    background: #cbd5e1;
+    border-radius: 8px;
 }
 
 .modal-close-elegant {
@@ -530,101 +532,417 @@
     right: 1.5rem;
     width: 36px;
     height: 36px;
-    background: transparent;
-    border: 1px solid #e5e7eb;
-    border-radius: 4px;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #9ca3af;
+    color: #94a3b8;
     cursor: pointer;
     transition: all 0.2s ease;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
 }
 
 .modal-close-elegant:hover {
-    background: #f3f4f6;
-    color: #111827;
+    background: #6868f9;
+    color: #ffffff;
+    border-color: #6868f9;
+    transform: scale(1.05);
 }
 
 .elegant-modal-header {
     display: flex;
-    align-items: flex-start;
-    gap: 2rem;
+    align-items: center;
+    gap: 2.5rem;
     margin-bottom: 2rem;
-    padding-bottom: 1.5rem;
-    border-bottom: 1px solid #f3f4f6;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.elegant-modal-avatar {
+    position: relative;
+    flex-shrink: 0;
 }
 
 .elegant-modal-avatar img {
-    width: 140px;
-    height: 140px;
-    border-radius: 8px;
-    object-fit: fill;
-    border: 1px solid #f3f4f6;
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #ffffff;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(0,0,0,0.03);
+    transition: transform 0.3s ease;
+}
+
+.elegant-modal-avatar img:hover {
+    transform: scale(1.03);
+}
+
+.elegant-modal-info {
+    flex: 1;
 }
 
 .elegant-astro-name {
-    font-size: 2rem;
+    font-size: 2.2rem;
     font-weight: 700;
-    color: #1f2937;
-    margin: 0 0 1rem 0;
+    color: #1e293b;
+    margin: 0 0 0.75rem 0;
+    letter-spacing: -0.5px;
 }
 
 .elegant-lang-text {
-    display: flex;
+    display: inline-flex;
     align-items: center;
-    gap: 0.75rem;
-    color: #4b5563;
-    font-size: 1rem;
-    font-weight: 500;
+    gap: 0.5rem;
+    color: #5c5cdd;
+    background: #f0f0ff;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+.elegant-lang-text svg {
+    stroke: #5c5cdd;
 }
 
 .elegant-section-heading {
-    font-size: 1.25rem;
-    font-weight: 600;
-    color: #111827;
-    margin: 0 0 1rem 0;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #334155;
+    margin: 0 0 1.2rem 0;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.elegant-section-heading::before {
+    content: '';
+    display: block;
+    width: 4px;
+    height: 20px;
+    background: #6868f9;
+    border-radius: 4px;
 }
 
 .elegant-bio-text p {
     font-size: 1.05rem;
     line-height: 1.7;
-    color: #4b5563;
+    color: #64748b;
     margin-bottom: 1.2rem;
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
 }
 
 @keyframes fadeInOverlay {
     from {
         opacity: 0;
+        backdrop-filter: blur(0px);
     }
-
     to {
         opacity: 1;
+        backdrop-filter: blur(12px);
     }
 }
 
 @keyframes scaleInModal {
     from {
-        transform: scale(0.95);
+        transform: scale(0.92) translateY(20px);
         opacity: 0;
     }
-
     to {
-        transform: scale(1);
+        transform: scale(1) translateY(0);
         opacity: 1;
     }
 }
 
+/* ==========================================================
+   BOOKING MODAL PREMIUM DESIGN
+========================================================== */
+.modal-content.booking-modal {
+    padding: 0;
+    width: 90%;
+    max-width: 750px;
+    background: #ffffff;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(0,0,0,0.02);
+    animation: scaleInModal 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    overflow: hidden;
+}
+
+.booking-modal .modal-close-elegant {
+    top: 1rem;
+    right: 1rem;
+    z-index: 10;
+}
+
+.booking-header {
+    padding: 2.5rem 2.5rem 1.5rem;
+    text-align: center;
+}
+
+.booking-title {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #1e293b;
+    margin: 0 0 0.5rem 0;
+}
+
+.booking-subtitle {
+    font-size: 1.1rem;
+    color: #64748b;
+    margin: 0;
+}
+
+.booking-subtitle strong {
+    color: #f97316;
+}
+
+/* Date Selector */
+.date-selector {
+    display: flex;
+    align-items: center;
+    background: #f1f5f9;
+    padding: 0 1rem;
+    border-top: 1px solid #e2e8f0;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.nav-arrow {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s;
+}
+
+.nav-arrow:hover {
+    transform: scale(1.1);
+}
+
+.dates-row {
+    display: flex;
+    flex: 1;
+    justify-content: space-around;
+}
+
+.date-btn {
+    flex: 1;
+    background: transparent;
+    border: none;
+    padding: 1.2rem 1rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #f97316; /* Orange color for unselected */
+    cursor: pointer;
+    position: relative;
+    transition: all 0.2s ease;
+}
+
+.date-btn.active {
+    color: #4da541; /* Green color for selected */
+}
+
+.date-btn.active::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: #4da541;
+}
+
+.date-btn:hover:not(.active) {
+    background: rgba(0,0,0,0.02);
+}
+
+/* Time Slots */
+.time-slots-container {
+    padding: 2rem 2.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.time-section {
+    display: flex;
+    align-items: flex-start;
+    gap: 2rem;
+}
+
+.time-section-title {
+    width: 120px;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #475569;
+    padding-top: 0.5rem;
+}
+
+.slots-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    flex: 1;
+}
+
+.time-slot {
+    background: #ffffff;
+    border: 1px solid #72a762;
+    color: #72a762;
+    padding: 0.6rem 1.5rem;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    min-width: 110px;
+    text-align: center;
+}
+
+.time-slot:hover {
+    background: #f0fdf4;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(114, 167, 98, 0.1);
+}
+
+.time-slot.selected {
+    background: #72a762;
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(114, 167, 98, 0.3);
+}
+
+.booking-footer {
+    padding: 1.5rem 2.5rem 2.5rem;
+    display: flex;
+    justify-content: center;
+}
+
+.confirm-btn {
+    width: 100%;
+    max-width: 300px;
+    padding: 1rem;
+    font-size: 1.1rem;
+}
+
+.confirm-btn:disabled {
+    background: #cbd5e1;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
 .btn-primary:hover::after {
     left: 150%;
+}
+
+/* ==========================================================
+   MOBILE RESPONSIVENESS
+========================================================== */
+@media (max-width: 768px) {
+    /* Profile Modal Mobile */
+    .modal-content.elegant-modal {
+        padding: 1.5rem;
+        width: 95%;
+        border-radius: 16px;
+    }
+    
+    .elegant-modal-header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 1.5rem;
+        padding-bottom: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .elegant-modal-avatar img {
+        width: 110px;
+        height: 110px;
+    }
+
+    .elegant-astro-name {
+        font-size: 1.8rem;
+    }
+
+    .elegant-lang-text {
+        font-size: 0.85rem;
+        padding: 0.5rem 1rem;
+    }
+
+    .modal-close-elegant {
+        top: 1rem;
+        right: 1rem;
+        width: 32px;
+        height: 32px;
+    }
+
+    .elegant-section-heading {
+        font-size: 1.2rem;
+    }
+
+    .elegant-bio-text p {
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+
+    /* Booking Modal Mobile */
+    .modal-content.booking-modal {
+        padding: 0;
+        width: 95%;
+    }
+
+    .booking-header {
+        padding: 2rem 1.5rem 1rem;
+    }
+
+    .booking-title {
+        font-size: 1.5rem;
+    }
+
+    .booking-subtitle {
+        font-size: 0.95rem;
+    }
+
+    .date-btn {
+        padding: 0.8rem 0.5rem;
+        font-size: 0.85rem;
+    }
+
+    .nav-arrow {
+        padding: 0.5rem;
+    }
+
+    .time-slots-container {
+        padding: 1.5rem;
+        gap: 1.5rem;
+    }
+
+    .time-section {
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+
+    .time-section-title {
+        width: 100%;
+        padding-top: 0;
+    }
+
+    .time-slot {
+        padding: 0.5rem 1rem;
+        font-size: 0.85rem;
+        min-width: 90px;
+    }
+
+    .booking-footer {
+        padding: 1rem 1.5rem 1.5rem;
+    }
 }

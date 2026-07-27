@@ -57,6 +57,31 @@ export class AstrologersComponent {
   ];
 
   selectedAstrologer: any = null;
+  selectedAstrologerForBooking: any = null;
+  activeDate: string = 'Tue, Jul 28';
+  selectedTimeSlot: string | null = null;
+  bookingDates = ['Mon, Jul 27', 'Tue, Jul 28', 'Wed, Jul 29'];
+
+  openBooking(astro: any) {
+    this.selectedAstrologerForBooking = astro;
+    document.body.style.overflow = 'hidden';
+  }
+
+  closeBooking() {
+    this.selectedAstrologerForBooking = null;
+    if (!this.selectedAstrologer) {
+      document.body.style.overflow = 'auto';
+    }
+  }
+
+  selectDate(date: string) {
+    this.activeDate = date;
+    this.selectedTimeSlot = null; // reset time on date change
+  }
+
+  selectTimeSlot(time: string) {
+    this.selectedTimeSlot = time;
+  }
 
   openProfile(astro: any) {
     this.selectedAstrologer = astro;
