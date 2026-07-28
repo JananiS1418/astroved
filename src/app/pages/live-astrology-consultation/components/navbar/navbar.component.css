@@ -626,6 +626,7 @@
 
     .desktop-nav {
         gap: 0.3rem;
+        margin: 0; /* Remove auto margin to prevent pushing right-side actions off-screen */
     }
 
     .brand-logo {
@@ -656,6 +657,20 @@
     }
 }
 
+/* MEDIUM LAPTOPS (up to 1450px) */
+@media (max-width: 1450px) {
+    .nav-link {
+        padding: 0.35rem 0.4rem;
+        font-size: 0.85rem;
+    }
+    .desktop-nav {
+        gap: 0.2rem;
+    }
+    .navbar-wrapper {
+        padding: 0 0.8rem;
+    }
+}
+
 /* SMALL LAPTOPS (up to 1350px) */
 @media (max-width: 1350px) {
     .nav-link {
@@ -665,6 +680,7 @@
 
     .desktop-nav {
         gap: 0.15rem;
+        margin: 0; /* Remove auto margin to let space-between work better when cramped */
     }
 
     .brand-logo {
@@ -685,9 +701,41 @@
     }
 }
 
+/* SMALLER LAPTOPS (up to 1150px) - ensures it fits on 1024px */
+@media (max-width: 1150px) {
+    .nav-link {
+        padding: 0.2rem 0.2rem;
+        font-size: 0.7rem;
+    }
+    .desktop-nav {
+        gap: 0.1rem;
+    }
+    .brand-logo {
+        height: 1.6rem;
+    }
+    .account-btn {
+        padding: 0.25rem 0.5rem;
+        font-size: 0.72rem;
+    }
+    .lang-btn span {
+        font-size: 0.65rem;
+    }
+    .action-btn {
+        width: 28px;
+        height: 28px;
+    }
+    .header-actions {
+        gap: 0.2rem;
+    }
+    .chevron-icon {
+        width: 6px;
+        height: 6px;
+    }
+}
 
-/* TABLET & SMALL LAPTOP (up to 1450px) */
-@media (max-width: 1450px) {
+
+/* TABLET (up to 1023px) */
+@media (max-width: 1023px) {
     .desktop-nav {
         display: none;
     }
